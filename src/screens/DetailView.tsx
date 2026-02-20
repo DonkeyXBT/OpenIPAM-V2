@@ -170,7 +170,7 @@ function HostDetail({ id }: { id: string }) {
 
           {/* IP Addresses */}
           <Card padding="none">
-            <div className="p-4">
+            <div className="px-5 pt-5 pb-3">
               <CardHeader><CardTitle>IP Addresses ({hostIPs.length})</CardTitle></CardHeader>
             </div>
             {hostIPs.length > 0 ? (
@@ -339,7 +339,7 @@ function SubnetDetail({ id }: { id: string }) {
           </Card>
 
           <Card padding="none">
-            <div className="p-4">
+            <div className="px-5 pt-5 pb-3">
               <CardHeader><CardTitle>IP Addresses ({subnetIPs.length})</CardTitle></CardHeader>
             </div>
             <Table

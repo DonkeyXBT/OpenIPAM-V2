@@ -80,7 +80,7 @@ export function ToastContainer() {
               "
               role="alert"
             >
-              <span className="shrink-0 mt-0.5" aria-hidden="true">
+              <span className="shrink-0" aria-hidden="true">
                 {icons[t.type]}
               </span>
               <div className="flex-1 min-w-0">

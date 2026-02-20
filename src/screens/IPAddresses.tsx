@@ -232,7 +232,7 @@ export function IPAddresses() {
       />
 
       {/* Filter Bar */}
-      <Card padding="sm" className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2">
+      <Card padding="sm" className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
         <div className="flex-1">
           <Input
             placeholder="Search by IP, DNS name, or MAC..."
@@ -242,7 +242,7 @@ export function IPAddresses() {
             aria-label="Search IP addresses"
           />
         </div>
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2.5">
           <Select
             options={statusOptions}
             value={statusFilter}

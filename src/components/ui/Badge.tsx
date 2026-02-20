@@ -23,8 +23,8 @@ const variantStyles: Record<BadgeVariant, string> = {
 }
 
 const sizeStyles: Record<BadgeSize, string> = {
-  sm: 'px-1.5 py-0.5 text-[10px]',
-  md: 'px-2 py-0.5 text-[11px]',
+  sm: 'px-2 py-0.5 text-[10px]',
+  md: 'px-2.5 py-1 text-[11px]',
 }
 
 export function Badge({
@@ -38,7 +38,7 @@ export function Badge({
   return (
     <span
       className={`
-        inline-flex items-center gap-1 font-medium rounded-full whitespace-nowrap
+        inline-flex items-center gap-1.5 font-medium rounded-full whitespace-nowrap
         ${variantStyles[variant]}
         ${sizeStyles[size]}
         ${className}
@@ -50,7 +50,7 @@ export function Badge({
     >
       {dot && (
         <span
-          className="w-1.5 h-1.5 rounded-full shrink-0"
+          className="w-2 h-2 rounded-full shrink-0"
           style={{ backgroundColor: color || 'currentColor' }}
           aria-hidden="true"
         />

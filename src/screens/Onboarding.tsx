@@ -39,9 +39,9 @@ interface OnboardingProps {
 }
 
 const features = [
-  { icon: <Globe className="w-6 h-6" />, title: 'IP Address Management', description: 'Track and manage IP allocations across subnets, VLANs, and DHCP scopes with conflict detection.' },
-  { icon: <Server className="w-6 h-6" />, title: 'Configuration Management', description: 'Full CMDB with host inventory, hardware lifecycle tracking, and datacenter rack visualization.' },
-  { icon: <Shield className="w-6 h-6" />, title: 'Audit & Security', description: 'Every change is logged with full user attribution. Microsoft SAML SSO for enterprise authentication.' },
+  { icon: <Globe className="w-6 h-6" />, title: 'IP Address Management', description: 'Track and manage IP allocations across subnets, VLANs, and DHCP scopes with conflict detection.', color: 'var(--color-system-blue)' },
+  { icon: <Server className="w-6 h-6" />, title: 'Configuration Management', description: 'Full CMDB with host inventory, hardware lifecycle tracking, and datacenter rack visualization.', color: 'var(--color-system-purple)' },
+  { icon: <Shield className="w-6 h-6" />, title: 'Audit & Security', description: 'Every change is logged with full user attribution. Microsoft SAML SSO for enterprise authentication.', color: 'var(--color-system-green)' },
 ]
 
 export function Onboarding({ onComplete }: OnboardingProps) {
@@ -102,7 +102,10 @@ export function Onboarding({ onComplete }: OnboardingProps) {
                   transition={{ delay: 0.2 + i * 0.1 }}
                   className="flex items-start gap-3 text-left p-4 rounded-xl bg-[var(--card-bg)] border border-[var(--card-border)]"
                 >
-                  <div className="shrink-0 w-10 h-10 rounded-lg bg-system-blue/10 flex items-center justify-center text-system-blue">
+                  <div
+                    className="shrink-0 w-10 h-10 rounded-lg flex items-center justify-center"
+                    style={{ backgroundColor: `color-mix(in srgb, ${f.color} 12%, transparent)`, color: f.color }}
+                  >
                     {f.icon}
                   </div>
                   <div>

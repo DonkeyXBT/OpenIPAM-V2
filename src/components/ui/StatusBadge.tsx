@@ -19,8 +19,8 @@ const hostStateConfig: Record<HostState, { label: string; color: string; dot: st
 export function IPStatusBadge({ status }: { status: IPStatus }) {
   const config = ipStatusConfig[status]
   return (
-    <span className={`inline-flex items-center gap-1.5 px-2 py-0.5 text-[11px] font-medium rounded-full ${config.color}`}>
-      <span className={`w-1.5 h-1.5 rounded-full ${config.dot}`} aria-hidden="true" />
+    <span className={`inline-flex items-center gap-1.5 px-2.5 py-1 text-[11px] font-medium rounded-full ${config.color}`}>
+      <span className={`w-2 h-2 rounded-full ${config.dot}`} aria-hidden="true" />
       {config.label}
     </span>
   )
@@ -29,8 +29,8 @@ export function IPStatusBadge({ status }: { status: IPStatus }) {
 export function HostStateBadge({ state }: { state: HostState }) {
   const config = hostStateConfig[state]
   return (
-    <span className={`inline-flex items-center gap-1.5 px-2 py-0.5 text-[11px] font-medium rounded-full ${config.color}`}>
-      <span className={`w-1.5 h-1.5 rounded-full ${config.dot} ${state === 'running' ? 'animate-pulse' : ''}`} aria-hidden="true" />
+    <span className={`inline-flex items-center gap-1.5 px-2.5 py-1 text-[11px] font-medium rounded-full ${config.color}`}>
+      <span className={`w-2 h-2 rounded-full ${config.dot} ${state === 'running' ? 'animate-pulse' : ''}`} aria-hidden="true" />
       {config.label}
     </span>
   )

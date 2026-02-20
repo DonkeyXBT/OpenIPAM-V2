@@ -76,7 +76,7 @@ export function Table<T extends Record<string, unknown>>({
     }
   }
 
-  const cellPadding = compact ? 'px-3 py-1.5' : 'px-4 py-2.5'
+  const cellPadding = compact ? 'px-3 py-2' : 'px-4 py-3'
 
   if (data.length === 0 && emptyState) {
     return <>{emptyState}</>
@@ -86,7 +86,7 @@ export function Table<T extends Record<string, unknown>>({
     <div className={`w-full overflow-x-auto rounded-xl border border-[var(--card-border)] bg-[var(--card-bg)] ${className}`}>
       <table className="w-full text-left" role="grid">
         <thead>
-          <tr className="border-b border-[var(--border-primary)]">
+          <tr className="border-b-2 border-[var(--border-primary)]">
             {onSelectionChange && (
               <th className={`${cellPadding} w-10`}>
                 <input

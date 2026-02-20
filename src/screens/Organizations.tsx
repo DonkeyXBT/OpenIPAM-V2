@@ -256,7 +256,7 @@ export function Organizations() {
         }
       />
 
-      <Card padding="sm" className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2">
+      <Card padding="sm" className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
         <div className="flex-1">
           <Input
             placeholder="Search organizations..."
@@ -327,7 +327,7 @@ export function Organizations() {
                   <span className="typo-caption text-[var(--text-secondary)]">{org.contact}</span>
                 </div>
 
-                <div className="grid grid-cols-3 gap-2 pt-3 border-t border-[var(--border-secondary)]">
+                <div className="grid grid-cols-3 gap-2 pt-3 border-t border-[var(--border-secondary)] divide-x divide-[var(--border-secondary)]">
                   <div className="text-center">
                     <p className="typo-headline text-[var(--text-primary)]">{stats.subnets}</p>
                     <p className="typo-caption text-[var(--text-tertiary)]">Subnets</p>

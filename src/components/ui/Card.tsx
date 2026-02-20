@@ -26,7 +26,7 @@ export function Card({
   return (
     <div
       className={`
-        rounded-xl border border-[var(--card-border)]
+        rounded-xl border border-[var(--card-border)] shadow-[var(--card-shadow)]
         ${glass ? 'glass' : 'bg-[var(--card-bg)]'}
         ${paddingStyles[padding]}
         ${hover ? 'transition-shadow duration-200 hover:shadow-md cursor-pointer' : ''}

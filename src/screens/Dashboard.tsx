@@ -124,23 +124,25 @@ export function Dashboard() {
                   {iconMap[stat.icon]}
                 </div>
               </div>
-              {stat.change !== undefined && (
-                <div className="flex items-center gap-1 mt-2">
-                  {stat.change > 0 ? (
-                    <TrendingUp className="w-3 h-3 text-system-green" />
-                  ) : stat.change < 0 ? (
-                    <TrendingDown className="w-3 h-3 text-system-red" />
-                  ) : null}
-                  <span
-                    className={`typo-caption font-medium ${
-                      stat.change > 0 ? 'text-system-green' : stat.change < 0 ? 'text-system-red' : 'text-[var(--text-tertiary)]'
-                    }`}
-                  >
-                    {stat.change > 0 ? '+' : ''}{stat.change}%
-                  </span>
-                  <span className="typo-caption text-[var(--text-quaternary)]">{stat.changeLabel}</span>
-                </div>
-              )}
+              <div className="flex items-center gap-1 mt-2 min-h-[20px]">
+                {stat.change !== undefined && (
+                  <>
+                    {stat.change > 0 ? (
+                      <TrendingUp className="w-3 h-3 text-system-green" />
+                    ) : stat.change < 0 ? (
+                      <TrendingDown className="w-3 h-3 text-system-red" />
+                    ) : null}
+                    <span
+                      className={`typo-caption font-medium ${
+                        stat.change > 0 ? 'text-system-green' : stat.change < 0 ? 'text-system-red' : 'text-[var(--text-tertiary)]'
+                      }`}
+                    >
+                      {stat.change > 0 ? '+' : ''}{stat.change}%
+                    </span>
+                    <span className="typo-caption text-[var(--text-quaternary)]">{stat.changeLabel}</span>
+                  </>
+                )}
+              </div>
             </Card>
           </motion.div>
         ))}
@@ -224,7 +226,7 @@ export function Dashboard() {
 
         {/* Conflict Alerts */}
         <Card padding="none" className="lg:col-span-3">
-          <div className="p-4 pb-0">
+          <div className="px-5 pt-5 pb-3">
             <CardHeader>
               <CardTitle>Conflict Alerts</CardTitle>
               <Badge variant={conflictAlerts.some((a) => a.severity === 'critical') ? 'error' : 'success'}>
@@ -248,7 +250,7 @@ export function Dashboard() {
                   key={alert.id}
                   className={`
                     w-full text-left p-3 rounded-lg border-l-[3px] transition-colors
-                    hover:brightness-95
+                    hover:bg-black/[0.03] dark:hover:bg-white/[0.03]
                     ${severityStyles[alert.severity]}
                   `}
                   onClick={() => navigate(`/ips/${alert.entityId}`)}
@@ -322,7 +324,7 @@ export function Dashboard() {
 
         {/* Recent Activity */}
         <Card padding="none" className="lg:col-span-2">
-          <div className="p-4 pb-0">
+          <div className="px-5 pt-5 pb-3">
             <CardHeader>
               <CardTitle>Recent Activity</CardTitle>
               <Button variant="ghost" size="sm" onClick={() => navigate('/audit')} iconRight={<ArrowRight className="w-3.5 h-3.5" />}>

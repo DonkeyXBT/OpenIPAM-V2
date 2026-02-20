@@ -81,7 +81,7 @@ export function AuditLog() {
       sortable: true,
       width: '100px',
       render: (v: unknown) => (
-        <span className={`inline-flex px-2 py-0.5 text-[11px] font-medium rounded-full capitalize ${actionColors[String(v)] || ''}`}>
+        <span className={`inline-flex px-2.5 py-1 typo-caption font-medium rounded-full capitalize ${actionColors[String(v)] || ''}`}>
           {String(v)}
         </span>
       ),
@@ -110,11 +110,11 @@ export function AuditLog() {
         }
       />
 
-      <Card padding="sm" className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2">
+      <Card padding="sm" className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
         <div className="flex-1">
           <Input placeholder="Search audit log..." icon={<Search className="w-4 h-4" />} value={search} onChange={(e) => setSearch(e.target.value)} />
         </div>
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2.5">
           <Select options={actionOptions} value={actionFilter} onChange={(e) => setActionFilter(e.target.value)} />
           <Select options={entityOptions} value={entityFilter} onChange={(e) => setEntityFilter(e.target.value)} />
         </div>

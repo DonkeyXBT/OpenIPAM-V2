@@ -142,11 +142,11 @@ export function Hosts() {
         }
       />
 
-      <Card padding="sm" className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2">
+      <Card padding="sm" className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
         <div className="flex-1">
           <Input placeholder="Search hosts..." icon={<Search className="w-4 h-4" />} value={search} onChange={(e) => setSearch(e.target.value)} />
         </div>
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2.5">
           <Select options={hostTypeOptions} value={typeFilter} onChange={(e) => setTypeFilter(e.target.value)} aria-label="Filter by type" />
           <Select options={stateOptions} value={stateFilter} onChange={(e) => setStateFilter(e.target.value)} aria-label="Filter by state" />
         </div>

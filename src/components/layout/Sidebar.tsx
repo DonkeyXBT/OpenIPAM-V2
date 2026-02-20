@@ -114,7 +114,7 @@ export function Sidebar({ collapsed, onToggle, theme, onThemeChange, onSearchOpe
                 {section.title}
               </span>
             )}
-            <ul className="space-y-[2px]" role="list">
+            <ul className="space-y-1" role="list">
               {section.items.map((item) => {
                 const isActive =
                   item.path === '/'
@@ -125,7 +125,7 @@ export function Sidebar({ collapsed, onToggle, theme, onThemeChange, onSearchOpe
                   <li key={item.path}>
                     <NavLink
                       to={item.path}
-                      className={`relative flex items-center gap-2.5 h-[34px] rounded-[8px] transition-all duration-150 ${collapsed ? 'justify-center px-0' : 'px-2.5'} ${isActive ? 'bg-[var(--sidebar-active)] text-white' : 'text-[var(--sidebar-text)] hover:bg-[var(--sidebar-hover)]'}`}
+                      className={`relative flex items-center gap-2.5 h-[36px] rounded-[8px] transition-all duration-150 ${collapsed ? 'justify-center px-0' : 'px-2.5'} ${isActive ? 'bg-[var(--sidebar-active)] text-white' : 'text-[var(--sidebar-text)] hover:bg-[var(--sidebar-hover)]'}`}
                       aria-current={isActive ? 'page' : undefined}
                       title={collapsed ? item.label : undefined}
                     >

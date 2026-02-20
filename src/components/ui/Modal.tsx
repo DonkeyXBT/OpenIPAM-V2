@@ -145,7 +145,7 @@ export function Modal({
 
             {/* Footer */}
             {footer && (
-              <div className="flex items-center justify-end gap-2 p-5 pt-3 border-t border-[var(--border-secondary)]">
+              <div className="flex items-center justify-end gap-2 px-5 py-4 border-t border-[var(--border-secondary)]">
                 {footer}
               </div>
             )}

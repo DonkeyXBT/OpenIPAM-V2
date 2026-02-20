@@ -11,7 +11,7 @@ import { Select } from '@/components/ui/Select'
 import { EmptyState } from '@/components/ui/EmptyState'
 import { CapacityBar } from '@/components/ui/ProgressRing'
 import { PageHeader } from '@/components/layout/PageHeader'
-import { toast } from '@/components/ui/Toast'
+import { toast } from '@/components/ui/toastStore'
 import { subnets, companies, vlans } from '@/data/mock'
 import type { Subnet } from '@/types'
 

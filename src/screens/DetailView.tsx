@@ -12,7 +12,7 @@ import { IPStatusBadge, HostStateBadge } from '@/components/ui/StatusBadge'
 import { CapacityBar } from '@/components/ui/ProgressRing'
 import { Table } from '@/components/ui/Table'
 import { ErrorState } from '@/components/ui/EmptyState'
-import { toast } from '@/components/ui/Toast'
+import { toast } from '@/components/ui/toastStore'
 import { hosts, subnets, vlans, ipAddresses, companies, auditLog } from '@/data/mock'
 
 /*

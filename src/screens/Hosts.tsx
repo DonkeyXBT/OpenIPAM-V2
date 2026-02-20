@@ -11,7 +11,7 @@ import { Modal } from '@/components/ui/Modal'
 import { EmptyState } from '@/components/ui/EmptyState'
 import { HostStateBadge } from '@/components/ui/StatusBadge'
 import { PageHeader } from '@/components/layout/PageHeader'
-import { toast } from '@/components/ui/Toast'
+import { toast } from '@/components/ui/toastStore'
 import { hosts, companies } from '@/data/mock'
 import type { Host } from '@/types'
 

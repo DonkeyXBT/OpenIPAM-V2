@@ -10,7 +10,7 @@ import { Select } from '@/components/ui/Select'
 import { CapacityBar } from '@/components/ui/ProgressRing'
 import { EmptyState } from '@/components/ui/EmptyState'
 import { PageHeader } from '@/components/layout/PageHeader'
-import { toast } from '@/components/ui/Toast'
+import { toast } from '@/components/ui/toastStore'
 import { dhcpScopes, dhcpLeases, subnets } from '@/data/mock'
 
 type Tab = 'scopes' | 'leases' | 'reservations'

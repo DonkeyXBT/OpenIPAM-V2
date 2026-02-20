@@ -4,8 +4,6 @@ import { CheckCircle, AlertTriangle, XCircle, Info, X } from 'lucide-react'
 import { dismiss, subscribe } from './toastStore'
 import type { ToastMessage } from '@/types'
 
-export { toast } from './toastStore'
-
 // ─── Icons ───────────────────────────────────────────────────────────────────
 
 const icons = {

@@ -23,7 +23,7 @@ export function Locations() {
   const [createOpen, setCreateOpen] = useState(false)
 
   return (
-    <div className="p-6 max-w-[1600px] mx-auto space-y-4 animate-fade-in">
+    <div className="p-6 max-w-[1600px] mx-auto space-y-5 animate-fade-in">
       <PageHeader
         title="Locations"
         description={`${locations.length} locations configured`}
@@ -42,7 +42,7 @@ export function Locations() {
           action={{ label: 'Add Location', icon: <Plus />, onClick: () => setCreateOpen(true) }}
         />
       ) : (
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 stagger">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 stagger">
           {locations.map((loc) => {
             const hostCount = hosts.filter((h) => h.locationId === loc.id).length
             return (

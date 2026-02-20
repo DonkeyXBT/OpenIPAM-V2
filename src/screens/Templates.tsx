@@ -33,7 +33,7 @@ export function Templates() {
   const [createOpen, setCreateOpen] = useState(false)
 
   return (
-    <div className="p-6 max-w-[1600px] mx-auto space-y-4 animate-fade-in">
+    <div className="p-6 max-w-[1600px] mx-auto space-y-5 animate-fade-in">
       <PageHeader
         title="Subnet Templates"
         description="Pre-configured subnet templates for quick provisioning"
@@ -44,7 +44,7 @@ export function Templates() {
         }
       />
 
-      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 stagger">
+      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 stagger">
         {templates.map((tpl) => (
           <Card key={tpl.id} padding="lg" hover>
             <div className="flex items-start justify-between mb-3">

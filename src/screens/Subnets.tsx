@@ -85,7 +85,7 @@ export function Subnets() {
   ]
 
   return (
-    <div className="p-6 max-w-[1600px] mx-auto space-y-4 animate-fade-in">
+    <div className="p-6 max-w-[1600px] mx-auto space-y-5 animate-fade-in">
       <PageHeader
         title="Subnets"
         description={`${subnets.length} subnets configured`}

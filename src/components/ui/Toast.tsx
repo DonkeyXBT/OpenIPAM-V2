@@ -24,7 +24,7 @@ export function ToastContainer() {
 
   return (
     <div
-      className="fixed bottom-5 right-5 flex flex-col-reverse gap-2 pointer-events-none"
+      className="fixed bottom-6 right-6 flex flex-col-reverse gap-2.5 pointer-events-none"
       style={{ zIndex: 500 }}
       aria-live="polite"
       aria-label="Notifications"
@@ -44,7 +44,7 @@ export function ToastContainer() {
               className="
                 flex items-start gap-3 p-3.5 rounded-xl
                 bg-[var(--surface-elevated)] border border-[var(--border-primary)]
-                shadow-lg
+                shadow-xl
               "
               role="alert"
             >

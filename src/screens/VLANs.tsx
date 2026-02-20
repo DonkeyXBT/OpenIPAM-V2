@@ -81,7 +81,7 @@ export function VLANs() {
   ]
 
   return (
-    <div className="p-6 max-w-[1600px] mx-auto space-y-4 animate-fade-in">
+    <div className="p-6 max-w-[1600px] mx-auto space-y-5 animate-fade-in">
       <PageHeader
         title="VLANs"
         description={`${vlans.length} VLANs across ${new Set(vlans.map((v) => v.type)).size} types`}

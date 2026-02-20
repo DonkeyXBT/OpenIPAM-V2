@@ -212,7 +212,7 @@ export function IPAddresses() {
   }
 
   return (
-    <div className="p-6 max-w-[1600px] mx-auto space-y-4 animate-fade-in">
+    <div className="p-6 max-w-[1600px] mx-auto space-y-5 animate-fade-in">
       <PageHeader
         title="IP Addresses"
         description={`${ipAddresses.length} total addresses across ${subnets.length} subnets`}
@@ -232,7 +232,7 @@ export function IPAddresses() {
       />
 
       {/* Filter Bar */}
-      <Card padding="sm" className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
+      <Card padding="md" className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
         <div className="flex-1">
           <Input
             placeholder="Search by IP, DNS name, or MAC..."

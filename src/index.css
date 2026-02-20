@@ -32,11 +32,12 @@
   --radius-xl: 20px;
   --radius-2xl: 28px;
 
-  --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.05);
-  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.06);
-  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.1), 0 1px 4px rgba(0, 0, 0, 0.06);
-  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.12), 0 2px 8px rgba(0, 0, 0, 0.06);
-  --shadow-xl: 0 16px 48px rgba(0, 0, 0, 0.16), 0 4px 16px rgba(0, 0, 0, 0.08);
+  --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.06), 0 0 0 1px rgba(0, 0, 0, 0.03);
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.15), 0 1px 4px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.18), 0 2px 8px rgba(0, 0, 0, 0.1);
+  --shadow-xl: 0 20px 48px rgba(0, 0, 0, 0.2), 0 4px 16px rgba(0, 0, 0, 0.12);
+  --shadow-2xl: 0 24px 64px rgba(0, 0, 0, 0.24), 0 8px 24px rgba(0, 0, 0, 0.14);
 
   --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', Roboto, sans-serif;
   --font-mono: 'SF Mono', 'Fira Code', 'Cascadia Code', Menlo, Consolas, monospace;
@@ -56,8 +57,8 @@
   --text-quaternary: #AEAEB2;
   --text-on-accent: #FFFFFF;
 
-  --border-primary: rgba(0, 0, 0, 0.06);
-  --border-secondary: rgba(0, 0, 0, 0.04);
+  --border-primary: rgba(0, 0, 0, 0.12);
+  --border-secondary: rgba(0, 0, 0, 0.08);
   --border-focus: #0A84FF;
 
   --glass-bg: rgba(255, 255, 255, 0.78);
@@ -66,26 +67,31 @@
   --sidebar-bg: #1D1D1F;
   --sidebar-text: rgba(255, 255, 255, 0.88);
   --sidebar-text-muted: rgba(255, 255, 255, 0.45);
-  --sidebar-hover: rgba(255, 255, 255, 0.07);
-  --sidebar-active: rgba(10, 132, 255, 0.18);
+  --sidebar-hover: rgba(255, 255, 255, 0.1);
+  --sidebar-active: rgba(10, 132, 255, 0.22);
   --sidebar-accent: #0A84FF;
 
   --card-bg: #FFFFFF;
-  --card-border: rgba(0, 0, 0, 0.06);
-  --card-shadow: 0 1px 3px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.04);
+  --card-border: rgba(0, 0, 0, 0.08);
+  --card-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06), 0 0 0 1px rgba(0, 0, 0, 0.03);
 
   --btn-primary-hover: #0070E0;
   --btn-primary-active: #005BBF;
   --btn-destructive-hover: #E03E35;
   --btn-destructive-active: #C5362E;
+  --btn-primary-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 3px rgba(0, 0, 0, 0.12);
 
   --input-bg: #F5F5F7;
-  --input-border: rgba(0, 0, 0, 0.1);
-  --input-focus-ring: rgba(10, 132, 255, 0.25);
+  --input-border: rgba(0, 0, 0, 0.15);
+  --input-focus-ring: rgba(10, 132, 255, 0.3);
 
-  --table-header-bg: #FAFAFC;
-  --table-row-hover: rgba(0, 0, 0, 0.02);
+  --table-header-bg: #F5F5F7;
+  --table-row-hover: rgba(0, 0, 0, 0.05);
   --table-row-selected: rgba(10, 132, 255, 0.06);
+
+  --card-hover-bg: rgba(0, 0, 0, 0.015);
+  --card-hover-border: rgba(0, 0, 0, 0.15);
+  --card-hover-shadow: 0 4px 12px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.08);
 
   --scrollbar-thumb: rgba(0, 0, 0, 0.12);
   --scrollbar-track: transparent;
@@ -96,10 +102,10 @@
 /* ─── Dark Theme ───────────────────────────────────────────────────────────── */
 
 .dark {
-  --surface-primary: #1C1C1E;
-  --surface-secondary: #2C2C2E;
-  --surface-tertiary: #3A3A3C;
-  --surface-elevated: #2C2C2E;
+  --surface-primary: #1A1A1C;
+  --surface-secondary: #141416;
+  --surface-tertiary: #2C2C2E;
+  --surface-elevated: #232325;
 
   --text-primary: #F5F5F7;
   --text-secondary: #A1A1A6;
@@ -107,36 +113,41 @@
   --text-quaternary: #636366;
   --text-on-accent: #FFFFFF;
 
-  --border-primary: rgba(255, 255, 255, 0.08);
-  --border-secondary: rgba(255, 255, 255, 0.04);
+  --border-primary: rgba(255, 255, 255, 0.14);
+  --border-secondary: rgba(255, 255, 255, 0.08);
   --border-focus: #0A84FF;
 
   --glass-bg: rgba(28, 28, 30, 0.78);
-  --glass-border: rgba(255, 255, 255, 0.06);
+  --glass-border: rgba(255, 255, 255, 0.1);
 
   --sidebar-bg: #000000;
   --sidebar-text: rgba(255, 255, 255, 0.88);
   --sidebar-text-muted: rgba(255, 255, 255, 0.45);
-  --sidebar-hover: rgba(255, 255, 255, 0.06);
-  --sidebar-active: rgba(10, 132, 255, 0.22);
+  --sidebar-hover: rgba(255, 255, 255, 0.08);
+  --sidebar-active: rgba(10, 132, 255, 0.25);
   --sidebar-accent: #0A84FF;
 
-  --card-bg: #1C1C1E;
-  --card-border: rgba(255, 255, 255, 0.06);
-  --card-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 1px 2px rgba(0, 0, 0, 0.2);
-
-  --input-bg: #2C2C2E;
-  --input-border: rgba(255, 255, 255, 0.1);
-  --input-focus-ring: rgba(10, 132, 255, 0.3);
+  --card-bg: #232325;
+  --card-border: rgba(255, 255, 255, 0.08);
+  --card-shadow: 0 1px 4px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.05);
 
   --btn-primary-hover: #2E96FF;
   --btn-primary-active: #0A84FF;
   --btn-destructive-hover: #FF5F57;
   --btn-destructive-active: #FF453A;
+  --btn-primary-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 3px rgba(0, 0, 0, 0.3);
 
-  --table-header-bg: #232325;
-  --table-row-hover: rgba(255, 255, 255, 0.03);
+  --input-bg: #2A2A2D;
+  --input-border: rgba(255, 255, 255, 0.15);
+  --input-focus-ring: rgba(10, 132, 255, 0.35);
+
+  --table-header-bg: #2A2A2D;
+  --table-row-hover: rgba(255, 255, 255, 0.06);
   --table-row-selected: rgba(10, 132, 255, 0.12);
+
+  --card-hover-bg: rgba(255, 255, 255, 0.02);
+  --card-hover-border: rgba(255, 255, 255, 0.18);
+  --card-hover-shadow: 0 4px 12px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(255, 255, 255, 0.08);
 
   --scrollbar-thumb: rgba(255, 255, 255, 0.12);
 
@@ -225,27 +236,32 @@ body {
 /* ─── Animations ───────────────────────────────────────────────────────────── */
 
 @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-@keyframes fadeInUp { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes fadeInUp { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes slideInFromRight { from { opacity: 0; transform: translateX(12px); } to { opacity: 1; transform: translateX(0); } }
 @keyframes shimmer { 0% { background-position: -200% 0; } 100% { background-position: 200% 0; } }
 @keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
 
-.animate-fade-in { animation: fadeIn 0.15s ease-out forwards; }
-.animate-fade-in-up { animation: fadeInUp 0.25s ease-out forwards; }
+.animate-fade-in { animation: fadeIn 0.2s cubic-bezier(0.25, 0.1, 0.25, 1) forwards; }
+.animate-fade-in-up { animation: fadeInUp 0.3s cubic-bezier(0.25, 0.1, 0.25, 1) forwards; }
 .animate-shimmer {
   background: linear-gradient(90deg, var(--surface-secondary) 25%, var(--surface-tertiary) 50%, var(--surface-secondary) 75%);
   background-size: 200% 100%;
   animation: shimmer 1.5s ease-in-out infinite;
 }
 
-.stagger > * { opacity: 0; animation: fadeInUp 0.25s ease-out forwards; }
+.stagger > * { opacity: 0; animation: fadeInUp 0.3s cubic-bezier(0.25, 0.1, 0.25, 1) forwards; }
 .stagger > *:nth-child(1) { animation-delay: 0ms; }
-.stagger > *:nth-child(2) { animation-delay: 40ms; }
-.stagger > *:nth-child(3) { animation-delay: 80ms; }
-.stagger > *:nth-child(4) { animation-delay: 120ms; }
-.stagger > *:nth-child(5) { animation-delay: 160ms; }
-.stagger > *:nth-child(6) { animation-delay: 200ms; }
-.stagger > *:nth-child(7) { animation-delay: 240ms; }
-.stagger > *:nth-child(8) { animation-delay: 280ms; }
+.stagger > *:nth-child(2) { animation-delay: 50ms; }
+.stagger > *:nth-child(3) { animation-delay: 100ms; }
+.stagger > *:nth-child(4) { animation-delay: 150ms; }
+.stagger > *:nth-child(5) { animation-delay: 200ms; }
+.stagger > *:nth-child(6) { animation-delay: 250ms; }
+.stagger > *:nth-child(7) { animation-delay: 300ms; }
+.stagger > *:nth-child(8) { animation-delay: 350ms; }
+.stagger > *:nth-child(9) { animation-delay: 400ms; }
+.stagger > *:nth-child(10) { animation-delay: 450ms; }
+.stagger > *:nth-child(11) { animation-delay: 500ms; }
+.stagger > *:nth-child(12) { animation-delay: 550ms; }
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {

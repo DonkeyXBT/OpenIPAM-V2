@@ -104,14 +104,9 @@ export function Dashboard() {
       />
 
       {/* ─── Stat Cards ─────────────────────────────────────────────── */}
-      <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 stagger">
+      <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 stagger">
         {dashboardStats.slice(0, 4).map((stat, i) => (
-          <motion.div
-            key={stat.label}
-            whileHover={{ y: -2 }}
-            transition={{ duration: 0.15 }}
-          >
-            <Card hover className="relative overflow-hidden">
+          <Card key={stat.label} hover className="relative overflow-hidden">
               <div className="flex items-start justify-between">
                 <div>
                   <p className="typo-subhead text-[var(--text-secondary)]">{stat.label}</p>
@@ -124,7 +119,7 @@ export function Dashboard() {
                   {iconMap[stat.icon]}
                 </div>
               </div>
-              <div className="flex items-center gap-1 mt-2 min-h-[20px]">
+              <div className="flex items-center gap-1 mt-3 min-h-[20px]">
                 {stat.change !== undefined && (
                   <>
                     {stat.change > 0 ? (
@@ -144,12 +139,11 @@ export function Dashboard() {
                 )}
               </div>
             </Card>
-          </motion.div>
         ))}
       </div>
 
       {/* ─── Second Row: Stat Cards (smaller) ────────────────────────── */}
-      <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 stagger">
+      <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 stagger">
         {dashboardStats.slice(4).map((stat) => (
           <Card key={stat.label} padding="sm" className="flex items-center gap-3">
             <div

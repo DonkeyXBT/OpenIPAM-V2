@@ -100,7 +100,7 @@ export function Modal({
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 0.15 }}
+            transition={{ duration: 0.2 }}
             className="absolute inset-0 bg-black/40 backdrop-blur-sm"
             onClick={onClose}
             aria-hidden="true"
@@ -109,14 +109,14 @@ export function Modal({
           {/* Dialog */}
           <motion.div
             ref={dialogRef}
-            initial={{ opacity: 0, scale: 0.95, y: 8 }}
+            initial={{ opacity: 0, scale: 0.97, y: 6 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
-            exit={{ opacity: 0, scale: 0.95, y: 8 }}
-            transition={{ duration: 0.2, ease: [0.34, 1.56, 0.64, 1] }}
+            exit={{ opacity: 0, scale: 0.97, y: 6 }}
+            transition={{ duration: 0.2, ease: [0.32, 0.72, 0, 1] }}
             className={`
               relative w-full ${sizeStyles[size]}
               bg-[var(--surface-elevated)] rounded-2xl
-              shadow-xl border border-[var(--border-primary)]
+              shadow-2xl border border-[var(--border-primary)]
               max-h-[85vh] flex flex-col
             `}
           >

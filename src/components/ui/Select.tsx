@@ -33,10 +33,10 @@ export const Select = forwardRef<HTMLSelectElement, SelectProps>(
             ref={ref}
             id={selectId}
             className={`
-              w-full h-9 px-3 pr-8 typo-callout appearance-none
+              w-full h-10 px-3 pr-8 typo-callout appearance-none
               bg-[var(--input-bg)] text-[var(--text-primary)]
               border border-[var(--input-border)] rounded-lg
-              transition-all duration-150 cursor-pointer
+              transition-[border-color,box-shadow,background-color] duration-200 cursor-pointer
               focus:outline-none focus:border-[var(--border-focus)] focus:ring-2 focus:ring-[var(--input-focus-ring)]
               disabled:opacity-50 disabled:cursor-not-allowed
               ${error ? 'border-system-red' : ''}

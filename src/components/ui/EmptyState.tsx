@@ -1,4 +1,5 @@
 import type { ReactNode } from 'react'
+import { motion } from 'framer-motion'
 import { Button } from './Button'
 
 interface EmptyStateProps {
@@ -15,11 +16,14 @@ interface EmptyStateProps {
 
 export function EmptyState({ icon, title, description, action, className = '' }: EmptyStateProps) {
   return (
-    <div
+    <motion.div
+      initial={{ opacity: 0, y: 8 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
       className={`flex flex-col items-center justify-center py-16 px-6 text-center ${className}`}
       role="status"
     >
-      <div className="w-16 h-16 rounded-2xl bg-[var(--surface-tertiary)] flex items-center justify-center mb-4 text-[var(--text-tertiary)] [&>svg]:w-7 [&>svg]:h-7">
+      <div className="w-16 h-16 rounded-2xl bg-[var(--surface-tertiary)] border border-[var(--border-secondary)] flex items-center justify-center mb-4 text-[var(--text-tertiary)] [&>svg]:w-7 [&>svg]:h-7">
         {icon}
       </div>
       <h3 className="typo-headline text-[var(--text-primary)] mb-1">{title}</h3>
@@ -29,7 +33,7 @@ export function EmptyState({ icon, title, description, action, className = '' }:
           {action.label}
         </Button>
       )}
-    </div>
+    </motion.div>
   )
 }
 

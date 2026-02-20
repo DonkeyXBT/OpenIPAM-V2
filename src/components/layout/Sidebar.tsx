@@ -66,12 +66,12 @@ export function Sidebar({ collapsed, onToggle, theme, onThemeChange, onSearchOpe
       initial={false}
       animate={{ width: collapsed ? 64 : 252 }}
       transition={{ duration: 0.2, ease: [0.25, 0.1, 0.25, 1] }}
-      className="h-screen flex flex-col shrink-0 bg-[var(--sidebar-bg)] border-r border-white/[0.06] overflow-hidden select-none"
+      className="h-screen flex flex-col shrink-0 bg-[var(--sidebar-bg)] border-r border-white/[0.1] overflow-hidden select-none"
       role="navigation"
       aria-label="Main navigation"
     >
       {/* Logo */}
-      <div className="flex items-center gap-2.5 px-4 h-[56px] shrink-0 border-b border-white/[0.04]">
+      <div className="flex items-center gap-2.5 px-4 h-[56px] shrink-0 border-b border-white/[0.08]">
         <div className="w-[32px] h-[32px] rounded-[8px] bg-system-blue flex items-center justify-center shrink-0">
           <Shield className="w-[16px] h-[16px] text-white" />
         </div>
@@ -92,7 +92,7 @@ export function Sidebar({ collapsed, onToggle, theme, onThemeChange, onSearchOpe
       <div className="px-2.5 pt-3 pb-1">
         <button
           onClick={onSearchOpen}
-          className={`w-full flex items-center gap-2 h-[34px] rounded-[8px] bg-white/[0.06] hover:bg-white/[0.1] transition-colors duration-150 ${collapsed ? 'justify-center px-0' : 'px-2.5'}`}
+          className={`w-full flex items-center gap-2 h-[34px] rounded-[8px] bg-white/[0.08] hover:bg-white/[0.14] transition-colors duration-150 ${collapsed ? 'justify-center px-0' : 'px-2.5'}`}
           aria-label="Open search"
         >
           <Search className="w-[14px] h-[14px] text-[var(--sidebar-text-muted)] shrink-0" />
@@ -132,7 +132,7 @@ export function Sidebar({ collapsed, onToggle, theme, onThemeChange, onSearchOpe
                       {isActive && (
                         <motion.div
                           layoutId="sidebar-active"
-                          className="absolute left-0 top-[6px] bottom-[6px] w-[3px] rounded-full bg-[var(--sidebar-accent)]"
+                          className="absolute left-0 top-[6px] bottom-[6px] w-[3px] rounded-full bg-[var(--sidebar-accent)] shadow-[0_0_8px_rgba(10,132,255,0.4)]"
                           transition={{ type: 'spring', stiffness: 500, damping: 35 }}
                         />
                       )}
@@ -152,7 +152,7 @@ export function Sidebar({ collapsed, onToggle, theme, onThemeChange, onSearchOpe
       </nav>
 
       {/* Footer */}
-      <div className="px-2.5 py-2.5 space-y-1.5 border-t border-white/[0.04]">
+      <div className="px-2.5 py-2.5 space-y-1.5 border-t border-white/[0.08]">
         {/* Theme Switcher */}
         <div className={`flex items-center ${collapsed ? 'justify-center' : 'gap-[2px]'} bg-white/[0.06] rounded-[8px] p-[3px]`}>
           {themeLabels.map((t) => (

@@ -33,7 +33,7 @@ export function AppLayout() {
 
       {/* Main Content */}
       <main
-        className="flex-1 overflow-y-auto overflow-x-hidden"
+        className="flex-1 overflow-y-auto overflow-x-hidden scroll-smooth"
         id="main-content"
         role="main"
       >

@@ -29,7 +29,7 @@ export function Card({
         rounded-xl border border-[var(--card-border)] shadow-[var(--card-shadow)]
         ${glass ? 'glass' : 'bg-[var(--card-bg)]'}
         ${paddingStyles[padding]}
-        ${hover ? 'transition-shadow duration-200 hover:shadow-md cursor-pointer' : ''}
+        ${hover ? 'transition-all duration-200 hover:shadow-[var(--card-hover-shadow)] hover:border-[var(--card-hover-border)] hover:bg-[var(--card-hover-bg)] cursor-pointer' : 'transition-all duration-200'}
         ${className}
       `}
       {...props}

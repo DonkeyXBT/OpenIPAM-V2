@@ -48,7 +48,7 @@ import { hosts, subnets, vlans, ipAddresses, companies, auditLog } from '@/data/
 
 function AttributeRow({ label, value, mono }: { label: string; value: React.ReactNode; mono?: boolean }) {
   return (
-    <div className="flex items-start py-2.5 border-b border-[var(--border-secondary)] last:border-b-0">
+    <div className="flex items-start py-3 border-b border-[var(--border-primary)] last:border-b-0">
       <dt className="w-40 shrink-0 typo-subhead text-[var(--text-tertiary)]">{label}</dt>
       <dd className={`flex-1 typo-callout text-[var(--text-primary)] ${mono ? 'typo-mono' : ''}`}>
         {value || <span className="text-[var(--text-quaternary)]">—</span>}
@@ -407,7 +407,7 @@ export function DetailView({ type }: { type: 'host' | 'ip' | 'subnet' | 'vlan' }
       {/* Back navigation */}
       <button
         onClick={() => navigate(paths[type])}
-        className="inline-flex items-center gap-1.5 typo-callout text-system-blue hover:underline mb-4"
+        className="inline-flex items-center gap-1.5 px-3 py-1.5 typo-callout text-system-blue hover:bg-system-blue/5 rounded-lg transition-colors mb-6"
       >
         <ArrowLeft className="w-4 h-4" />
         Back to {labels[type]}

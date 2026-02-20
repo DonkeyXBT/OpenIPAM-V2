@@ -128,7 +128,7 @@ export function Hosts() {
   ]
 
   return (
-    <div className="p-6 max-w-[1600px] mx-auto space-y-4 animate-fade-in">
+    <div className="p-6 max-w-[1600px] mx-auto space-y-5 animate-fade-in">
       <PageHeader
         title="Hosts"
         description={`${hosts.length} hosts · ${hosts.filter((h) => h.state === 'running').length} running`}
@@ -142,7 +142,7 @@ export function Hosts() {
         }
       />
 
-      <Card padding="sm" className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
+      <Card padding="md" className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
         <div className="flex-1">
           <Input placeholder="Search hosts..." icon={<Search className="w-4 h-4" />} value={search} onChange={(e) => setSearch(e.target.value)} />
         </div>

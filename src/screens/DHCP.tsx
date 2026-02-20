@@ -98,7 +98,7 @@ export function DHCP() {
   ]
 
   return (
-    <div className="p-6 max-w-[1600px] mx-auto space-y-4 animate-fade-in">
+    <div className="p-6 max-w-[1600px] mx-auto space-y-5 animate-fade-in">
       <PageHeader
         title="DHCP Management"
         description={`${dhcpScopes.length} scopes · ${dhcpLeases.filter((l) => l.status === 'active').length} active leases`}
@@ -110,13 +110,13 @@ export function DHCP() {
       />
 
       {/* Tabs */}
-      <div className="flex items-center gap-1 bg-[var(--surface-tertiary)] rounded-lg p-0.5 w-fit" role="tablist">
+      <div className="flex items-center gap-1 bg-[var(--surface-tertiary)] border border-[var(--border-secondary)] rounded-lg p-1 w-fit" role="tablist">
         {tabs.map((tab) => (
           <button
             key={tab.key}
             onClick={() => setActiveTab(tab.key)}
             className={`
-              flex items-center gap-1.5 px-3 py-1.5 rounded-md text-[13px] font-medium transition-all
+              flex items-center gap-1.5 px-4 py-2 rounded-md text-[13px] font-medium transition-all
               ${activeTab === tab.key
                 ? 'bg-[var(--card-bg)] text-[var(--text-primary)] shadow-sm'
                 : 'text-[var(--text-secondary)] hover:text-[var(--text-primary)]'}

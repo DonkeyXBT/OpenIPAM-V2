@@ -14,17 +14,17 @@ interface BadgeProps {
 
 const variantStyles: Record<BadgeVariant, string> = {
   default: 'bg-[var(--surface-tertiary)] text-[var(--text-secondary)]',
-  success: 'bg-system-green/15 text-system-green',
-  warning: 'bg-system-orange/15 text-system-orange',
-  error: 'bg-system-red/15 text-system-red',
-  info: 'bg-system-blue/15 text-system-blue',
-  purple: 'bg-system-purple/15 text-system-purple',
+  success: 'bg-system-green/18 text-system-green',
+  warning: 'bg-system-orange/18 text-system-orange',
+  error: 'bg-system-red/18 text-system-red',
+  info: 'bg-system-blue/18 text-system-blue',
+  purple: 'bg-system-purple/18 text-system-purple',
   custom: '',
 }
 
 const sizeStyles: Record<BadgeSize, string> = {
-  sm: 'px-2 py-0.5 text-[10px]',
-  md: 'px-2.5 py-1 text-[11px]',
+  sm: 'px-2 py-0.5 text-[11px]',
+  md: 'px-2.5 py-1 text-[12px]',
 }
 
 export function Badge({

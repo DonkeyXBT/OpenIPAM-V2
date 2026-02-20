@@ -245,7 +245,7 @@ export function Organizations() {
   )
 
   return (
-    <div className="p-6 max-w-[1600px] mx-auto space-y-4 animate-fade-in">
+    <div className="p-6 max-w-[1600px] mx-auto space-y-5 animate-fade-in">
       <PageHeader
         title="Organizations"
         description={`${companies.length} organizations managing network resources`}
@@ -256,7 +256,7 @@ export function Organizations() {
         }
       />
 
-      <Card padding="sm" className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
+      <Card padding="md" className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
         <div className="flex-1">
           <Input
             placeholder="Search organizations..."
@@ -265,7 +265,7 @@ export function Organizations() {
             onChange={(e) => setSearch(e.target.value)}
           />
         </div>
-        <div className="flex items-center gap-1 bg-[var(--surface-tertiary)] rounded-lg p-0.5">
+        <div className="flex items-center gap-1 bg-[var(--surface-tertiary)] border border-[var(--border-secondary)] rounded-lg p-0.5">
           <button
             onClick={() => setViewMode('cards')}
             className={`px-2.5 py-1 rounded-md text-[12px] font-medium transition-all ${viewMode === 'cards' ? 'bg-[var(--card-bg)] text-[var(--text-primary)] shadow-sm' : 'text-[var(--text-secondary)]'}`}

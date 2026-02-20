@@ -1,37 +1,10 @@
 import { useEffect, useState, useCallback } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { CheckCircle, AlertTriangle, XCircle, Info, X } from 'lucide-react'
+import { dismiss, subscribe } from './toastStore'
 import type { ToastMessage } from '@/types'
 
-// ─── Toast Store (simple pub/sub) ────────────────────────────────────────────
-
-type Listener = (toasts: ToastMessage[]) => void
-
-let toasts: ToastMessage[] = []
-const listeners = new Set<Listener>()
-
-function notify() {
-  listeners.forEach((l) => l([...toasts]))
-}
-
-export function toast(msg: Omit<ToastMessage, 'id'>) {
-  const id = crypto.randomUUID()
-  toasts = [...toasts, { ...msg, id }]
-  notify()
-
-  const duration = msg.duration ?? 4000
-  if (duration > 0) {
-    setTimeout(() => {
-      toasts = toasts.filter((t) => t.id !== id)
-      notify()
-    }, duration)
-  }
-}
-
-function dismiss(id: string) {
-  toasts = toasts.filter((t) => t.id !== id)
-  notify()
-}
+export { toast } from './toastStore'
 
 // ─── Icons ───────────────────────────────────────────────────────────────────
 
@@ -47,10 +20,7 @@ const icons = {
 export function ToastContainer() {
   const [items, setItems] = useState<ToastMessage[]>([])
 
-  useEffect(() => {
-    listeners.add(setItems)
-    return () => { listeners.delete(setItems) }
-  }, [])
+  useEffect(() => subscribe(setItems), [])
 
   const handleDismiss = useCallback((id: string) => dismiss(id), [])
 

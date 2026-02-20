@@ -100,7 +100,7 @@ export function IPAddresses() {
       sortable: true,
       width: '160px',
       render: (val: unknown) => (
-        <span className="text-mono font-medium text-[var(--text-primary)]">
+        <span className="typo-mono font-medium text-[var(--text-primary)]">
           {String(val)}
         </span>
       ),
@@ -126,7 +126,7 @@ export function IPAddresses() {
       sortable: true,
       width: '160px',
       render: (val: unknown) => (
-        <span className="text-mono text-[var(--text-tertiary)]">{String(val) || '—'}</span>
+        <span className="typo-mono text-[var(--text-tertiary)]">{String(val) || '—'}</span>
       ),
     },
     {
@@ -141,6 +141,23 @@ export function IPAddresses() {
           </span>
         ) : (
           '—'
+        )
+      },
+    },
+    {
+      key: 'subnetId',
+      label: 'Organization',
+      sortable: true,
+      render: (val: unknown) => {
+        const subnet = subnets.find((s) => s.id === String(val))
+        if (!subnet) return <span className="text-[var(--text-quaternary)]">—</span>
+        const company = companies.find((c) => c.id === subnet.companyId)
+        return company ? (
+          <Badge variant="custom" size="sm" color={company.color} dot>
+            {company.code}
+          </Badge>
+        ) : (
+          <span className="text-[var(--text-quaternary)]">—</span>
         )
       },
     },
@@ -165,7 +182,7 @@ export function IPAddresses() {
       sortable: true,
       width: '140px',
       render: (val: unknown) => (
-        <span className="text-caption text-[var(--text-tertiary)]">
+        <span className="typo-caption text-[var(--text-tertiary)]">
           {val ? new Date(String(val)).toLocaleDateString() : '—'}
         </span>
       ),
@@ -253,7 +270,7 @@ export function IPAddresses() {
       {/* Bulk Actions */}
       {selectedIds.size > 0 && (
         <Card padding="sm" className="flex items-center gap-3 bg-system-blue/5 border-system-blue/20">
-          <span className="text-callout font-medium text-system-blue">
+          <span className="typo-callout font-medium text-system-blue">
             {selectedIds.size} selected
           </span>
           <Button variant="ghost" size="sm" icon={<Copy className="w-3.5 h-3.5" />}>
@@ -303,7 +320,7 @@ export function IPAddresses() {
 
       {/* Result Count */}
       <div className="flex items-center justify-between">
-        <span className="text-caption text-[var(--text-tertiary)]">
+        <span className="typo-caption text-[var(--text-tertiary)]">
           Showing {filtered.length} of {ipAddresses.length} addresses
         </span>
       </div>
@@ -368,21 +385,21 @@ export function IPAddresses() {
               onClick={() => { navigate(`/ips/${contextMenuRow.id}`); setContextMenuRow(null) }}
             >
               <Eye className="w-4 h-4 text-[var(--text-secondary)]" />
-              <span className="text-callout text-[var(--text-primary)]">View Details</span>
+              <span className="typo-callout text-[var(--text-primary)]">View Details</span>
             </button>
             <button
               className="w-full flex items-center gap-3 px-5 py-2.5 text-left hover:bg-[var(--table-row-hover)] transition-colors"
               onClick={() => { setContextMenuRow(null) }}
             >
               <Edit className="w-4 h-4 text-[var(--text-secondary)]" />
-              <span className="text-callout text-[var(--text-primary)]">Edit</span>
+              <span className="typo-callout text-[var(--text-primary)]">Edit</span>
             </button>
             <button
               className="w-full flex items-center gap-3 px-5 py-2.5 text-left hover:bg-[var(--table-row-hover)] transition-colors"
               onClick={() => { handleCopyIP(contextMenuRow.ipAddress); setContextMenuRow(null) }}
             >
               <Copy className="w-4 h-4 text-[var(--text-secondary)]" />
-              <span className="text-callout text-[var(--text-primary)]">Copy IP Address</span>
+              <span className="typo-callout text-[var(--text-primary)]">Copy IP Address</span>
             </button>
             <div className="my-1 border-t border-[var(--border-secondary)]" />
             <button
@@ -393,7 +410,7 @@ export function IPAddresses() {
               }}
             >
               <Trash2 className="w-4 h-4 text-system-red" />
-              <span className="text-callout text-system-red">Delete</span>
+              <span className="typo-callout text-system-red">Delete</span>
             </button>
           </div>
         )}

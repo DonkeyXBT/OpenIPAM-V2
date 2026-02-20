@@ -56,8 +56,8 @@ export function Templates() {
                 <Badge variant="info" size="sm">/{tpl.cidr}</Badge>
               </div>
             </div>
-            <h3 className="text-headline text-[var(--text-primary)] mb-0.5">{tpl.name}</h3>
-            <p className="text-caption text-[var(--text-secondary)] mb-3">{tpl.description}</p>
+            <h3 className="typo-headline text-[var(--text-primary)] mb-0.5">{tpl.name}</h3>
+            <p className="typo-caption text-[var(--text-secondary)] mb-3">{tpl.description}</p>
             <div className="flex items-center gap-2 pt-3 border-t border-[var(--border-secondary)]">
               <Button
                 variant="secondary"

@@ -86,10 +86,10 @@ export function Onboarding({ onComplete }: OnboardingProps) {
             >
               <Shield className="w-10 h-10 text-white" />
             </motion.div>
-            <h1 className="text-large-title text-[var(--text-primary)] mb-3">
+            <h1 className="typo-large-title text-[var(--text-primary)] mb-3">
               Welcome to OpenIPAM
             </h1>
-            <p className="text-body text-[var(--text-secondary)] mb-8 max-w-md mx-auto">
+            <p className="typo-body text-[var(--text-secondary)] mb-8 max-w-md mx-auto">
               A unified dashboard for IP address management, network infrastructure, and configuration management.
             </p>
 
@@ -106,8 +106,8 @@ export function Onboarding({ onComplete }: OnboardingProps) {
                     {f.icon}
                   </div>
                   <div>
-                    <h3 className="text-callout font-semibold text-[var(--text-primary)]">{f.title}</h3>
-                    <p className="text-caption text-[var(--text-secondary)] mt-0.5">{f.description}</p>
+                    <h3 className="typo-callout font-semibold text-[var(--text-primary)]">{f.title}</h3>
+                    <p className="typo-caption text-[var(--text-secondary)] mt-0.5">{f.description}</p>
                   </div>
                 </motion.div>
               ))}
@@ -129,8 +129,8 @@ export function Onboarding({ onComplete }: OnboardingProps) {
             transition={{ duration: 0.2 }}
             className="text-center max-w-xl"
           >
-            <h2 className="text-title-1 text-[var(--text-primary)] mb-2">Choose Your Mode</h2>
-            <p className="text-body text-[var(--text-secondary)] mb-8">
+            <h2 className="typo-title-1 text-[var(--text-primary)] mb-2">Choose Your Mode</h2>
+            <p className="typo-body text-[var(--text-secondary)] mb-8">
               OpenIPAM works in your browser or with a server backend.
             </p>
 
@@ -150,8 +150,8 @@ export function Onboarding({ onComplete }: OnboardingProps) {
                   <CheckCircle className="absolute top-3 right-3 w-5 h-5 text-system-blue" />
                 )}
                 <Monitor className="w-8 h-8 text-system-blue mb-3" />
-                <h3 className="text-headline text-[var(--text-primary)] mb-1">Browser Only</h3>
-                <p className="text-caption text-[var(--text-secondary)]">
+                <h3 className="typo-headline text-[var(--text-primary)] mb-1">Browser Only</h3>
+                <p className="typo-caption text-[var(--text-secondary)]">
                   All data stored locally in your browser. No server required. Great for personal use or evaluation.
                 </p>
               </button>
@@ -171,8 +171,8 @@ export function Onboarding({ onComplete }: OnboardingProps) {
                   <CheckCircle className="absolute top-3 right-3 w-5 h-5 text-system-blue" />
                 )}
                 <Cloud className="w-8 h-8 text-system-purple mb-3" />
-                <h3 className="text-headline text-[var(--text-primary)] mb-1">Server Backed</h3>
-                <p className="text-caption text-[var(--text-secondary)]">
+                <h3 className="typo-headline text-[var(--text-primary)] mb-1">Server Backed</h3>
+                <p className="typo-caption text-[var(--text-secondary)]">
                   Python Flask backend with SQLite. Supports SAML SSO, multi-user, and audit logging.
                 </p>
               </button>
@@ -205,13 +205,13 @@ export function Onboarding({ onComplete }: OnboardingProps) {
             >
               <CheckCircle className="w-8 h-8 text-system-green" />
             </motion.div>
-            <h2 className="text-title-1 text-[var(--text-primary)] mb-2">You're All Set</h2>
-            <p className="text-body text-[var(--text-secondary)] mb-2">
+            <h2 className="typo-title-1 text-[var(--text-primary)] mb-2">You're All Set</h2>
+            <p className="typo-body text-[var(--text-secondary)] mb-2">
               {mode === 'browser'
                 ? 'Running in browser-only mode. Your data is stored locally.'
                 : 'Server mode configured. Connect your Flask backend to enable multi-user features.'}
             </p>
-            <p className="text-callout text-[var(--text-tertiary)] mb-8">
+            <p className="typo-callout text-[var(--text-tertiary)] mb-8">
               Press <kbd className="px-1.5 py-0.5 bg-[var(--surface-tertiary)] rounded text-[12px] font-mono">/</kbd> anytime to search across all entities.
             </p>
 

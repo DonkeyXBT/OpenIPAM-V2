@@ -22,8 +22,8 @@ export function EmptyState({ icon, title, description, action, className = '' }:
       <div className="w-16 h-16 rounded-2xl bg-[var(--surface-tertiary)] flex items-center justify-center mb-4 text-[var(--text-tertiary)] [&>svg]:w-7 [&>svg]:h-7">
         {icon}
       </div>
-      <h3 className="text-headline text-[var(--text-primary)] mb-1">{title}</h3>
-      <p className="text-callout text-[var(--text-secondary)] max-w-sm mb-6">{description}</p>
+      <h3 className="typo-headline text-[var(--text-primary)] mb-1">{title}</h3>
+      <p className="typo-callout text-[var(--text-secondary)] max-w-sm mb-6">{description}</p>
       {action && (
         <Button variant="primary" icon={action.icon} onClick={action.onClick}>
           {action.label}
@@ -61,8 +61,8 @@ export function ErrorState({
           <line x1="9" y1="9" x2="15" y2="15" />
         </svg>
       </div>
-      <h3 className="text-headline text-[var(--text-primary)] mb-1">{title}</h3>
-      <p className="text-callout text-[var(--text-secondary)] max-w-sm mb-6">{description}</p>
+      <h3 className="typo-headline text-[var(--text-primary)] mb-1">{title}</h3>
+      <p className="typo-callout text-[var(--text-secondary)] max-w-sm mb-6">{description}</p>
       {onRetry && (
         <Button variant="secondary" onClick={onRetry}>
           Try Again
@@ -94,11 +94,11 @@ export function OfflineState() {
           <line x1="12" y1="20" x2="12.01" y2="20" />
         </svg>
       </div>
-      <h3 className="text-headline text-[var(--text-primary)] mb-1">Backend Offline</h3>
-      <p className="text-callout text-[var(--text-secondary)] max-w-sm mb-2">
+      <h3 className="typo-headline text-[var(--text-primary)] mb-1">Backend Offline</h3>
+      <p className="typo-callout text-[var(--text-secondary)] max-w-sm mb-2">
         The server is not reachable. Running in browser-only mode with local storage.
       </p>
-      <p className="text-caption text-[var(--text-tertiary)]">
+      <p className="typo-caption text-[var(--text-tertiary)]">
         Data will sync automatically when the server becomes available.
       </p>
     </div>

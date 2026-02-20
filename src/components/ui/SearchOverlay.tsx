@@ -205,12 +205,12 @@ export function SearchOverlay({ open, onClose, onNavigate }: SearchOverlayProps)
                   onChange={(e) => setQuery(e.target.value)}
                   onKeyDown={handleKeyDown}
                   placeholder="Search hosts, IPs, subnets, VLANs, DHCP..."
-                  className="flex-1 bg-transparent text-body text-[var(--text-primary)] placeholder:text-[var(--text-quaternary)] outline-none"
+                  className="flex-1 bg-transparent typo-body text-[var(--text-primary)] placeholder:text-[var(--text-quaternary)] outline-none"
                   aria-label="Search"
                   aria-autocomplete="list"
                   aria-controls="search-results"
                 />
-                <kbd className="hidden sm:inline-flex items-center px-1.5 py-0.5 text-caption font-medium text-[var(--text-quaternary)] bg-[var(--surface-tertiary)] rounded">
+                <kbd className="hidden sm:inline-flex items-center px-1.5 py-0.5 typo-caption font-medium text-[var(--text-quaternary)] bg-[var(--surface-tertiary)] rounded">
                   ESC
                 </kbd>
               </div>
@@ -224,20 +224,20 @@ export function SearchOverlay({ open, onClose, onNavigate }: SearchOverlayProps)
               >
                 {query.trim() === '' ? (
                   <div className="px-4 py-8 text-center">
-                    <p className="text-callout text-[var(--text-tertiary)]">
+                    <p className="typo-callout text-[var(--text-tertiary)]">
                       Type to search across all entities
                     </p>
                     <div className="flex items-center justify-center gap-2 mt-3">
-                      <kbd className="px-1.5 py-0.5 text-caption bg-[var(--surface-tertiary)] rounded">/</kbd>
-                      <span className="text-caption text-[var(--text-quaternary)]">to open search</span>
+                      <kbd className="px-1.5 py-0.5 typo-caption bg-[var(--surface-tertiary)] rounded">/</kbd>
+                      <span className="typo-caption text-[var(--text-quaternary)]">to open search</span>
                     </div>
                   </div>
                 ) : filtered.length === 0 ? (
                   <div className="px-4 py-8 text-center">
-                    <p className="text-callout text-[var(--text-secondary)]">
+                    <p className="typo-callout text-[var(--text-secondary)]">
                       No results for "{query}"
                     </p>
-                    <p className="text-caption text-[var(--text-tertiary)] mt-1">
+                    <p className="typo-caption text-[var(--text-tertiary)] mt-1">
                       Try a different search term
                     </p>
                   </div>
@@ -246,7 +246,7 @@ export function SearchOverlay({ open, onClose, onNavigate }: SearchOverlayProps)
                     {Object.entries(grouped).map(([type, results]) => (
                       <div key={type}>
                         <div className="px-4 py-1.5">
-                          <span className="text-caption font-semibold text-[var(--text-tertiary)] uppercase tracking-wider">
+                          <span className="typo-caption font-semibold text-[var(--text-tertiary)] uppercase tracking-wider">
                             {type === 'ip' ? 'IP Addresses' : type.charAt(0).toUpperCase() + type.slice(1) + 's'}
                           </span>
                         </div>
@@ -273,15 +273,15 @@ export function SearchOverlay({ open, onClose, onNavigate }: SearchOverlayProps)
                                 {typeIcons[result.type]}
                               </span>
                               <div className="flex-1 min-w-0">
-                                <p className="text-callout font-medium text-[var(--text-primary)] truncate">
+                                <p className="typo-callout font-medium text-[var(--text-primary)] truncate">
                                   {result.title}
                                 </p>
-                                <p className="text-caption text-[var(--text-tertiary)] truncate">
+                                <p className="typo-caption text-[var(--text-tertiary)] truncate">
                                   {result.subtitle}
                                 </p>
                               </div>
                               {isSelected && (
-                                <kbd className="shrink-0 px-1.5 py-0.5 text-caption bg-[var(--surface-tertiary)] rounded text-[var(--text-quaternary)]">
+                                <kbd className="shrink-0 px-1.5 py-0.5 typo-caption bg-[var(--surface-tertiary)] rounded text-[var(--text-quaternary)]">
                                   Enter
                                 </kbd>
                               )}
@@ -297,13 +297,13 @@ export function SearchOverlay({ open, onClose, onNavigate }: SearchOverlayProps)
               {/* Footer */}
               {filtered.length > 0 && (
                 <div className="px-4 py-2 border-t border-[var(--border-secondary)] flex items-center gap-4">
-                  <span className="text-caption text-[var(--text-quaternary)]">
+                  <span className="typo-caption text-[var(--text-quaternary)]">
                     {filtered.length} result{filtered.length !== 1 ? 's' : ''}
                   </span>
-                  <span className="text-caption text-[var(--text-quaternary)] flex items-center gap-1">
+                  <span className="typo-caption text-[var(--text-quaternary)] flex items-center gap-1">
                     <kbd className="px-1 bg-[var(--surface-tertiary)] rounded text-[10px]">↑↓</kbd> navigate
                   </span>
-                  <span className="text-caption text-[var(--text-quaternary)] flex items-center gap-1">
+                  <span className="typo-caption text-[var(--text-quaternary)] flex items-center gap-1">
                     <kbd className="px-1 bg-[var(--surface-tertiary)] rounded text-[10px]">↵</kbd> select
                   </span>
                 </div>

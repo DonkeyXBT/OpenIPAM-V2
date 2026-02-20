@@ -15,13 +15,13 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 
 const variantStyles: Record<ButtonVariant, string> = {
   primary:
-    'bg-system-blue text-white hover:brightness-110 active:brightness-95 shadow-sm',
+    'bg-system-blue text-white hover:bg-[#0070E0] active:bg-[#005BBF] shadow-sm',
   secondary:
-    'bg-[var(--surface-tertiary)] text-[var(--text-primary)] hover:brightness-95 active:brightness-90',
+    'bg-[var(--surface-tertiary)] text-[var(--text-primary)] hover:bg-[var(--surface-tertiary)]/80 active:bg-[var(--surface-tertiary)]/60',
   ghost:
-    'bg-transparent text-[var(--text-secondary)] hover:bg-[var(--surface-tertiary)] active:bg-[var(--surface-tertiary)]',
+    'bg-transparent text-[var(--text-secondary)] hover:bg-[var(--surface-tertiary)] hover:text-[var(--text-primary)] active:bg-[var(--surface-tertiary)]',
   destructive:
-    'bg-system-red text-white hover:brightness-110 active:brightness-95 shadow-sm',
+    'bg-system-red text-white hover:bg-[#E03E35] active:bg-[#C5362E] shadow-sm',
   outline:
     'bg-transparent border border-[var(--border-primary)] text-[var(--text-primary)] hover:bg-[var(--surface-tertiary)]',
 }

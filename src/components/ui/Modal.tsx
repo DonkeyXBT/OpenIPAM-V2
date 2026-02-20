@@ -123,9 +123,9 @@ export function Modal({
             {/* Header */}
             <div className="flex items-start justify-between p-5 pb-0">
               <div>
-                <h2 className="text-title-3 text-[var(--text-primary)]">{title}</h2>
+                <h2 className="typo-title-3 text-[var(--text-primary)]">{title}</h2>
                 {description && (
-                  <p className="text-callout text-[var(--text-secondary)] mt-0.5">
+                  <p className="typo-callout text-[var(--text-secondary)] mt-0.5">
                     {description}
                   </p>
                 )}

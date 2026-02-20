@@ -102,7 +102,7 @@ export function Table<T extends Record<string, unknown>>({
               <th
                 key={col.key}
                 className={`
-                  ${cellPadding} text-subheadline font-semibold text-[var(--text-secondary)]
+                  ${cellPadding} typo-subhead font-semibold text-[var(--text-secondary)]
                   bg-[var(--table-header-bg)] select-none
                   ${col.sortable ? 'cursor-pointer hover:text-[var(--text-primary)]' : ''}
                   ${col.align === 'right' ? 'text-right' : col.align === 'center' ? 'text-center' : ''}
@@ -170,7 +170,7 @@ export function Table<T extends Record<string, unknown>>({
                   <td
                     key={col.key}
                     className={`
-                      ${cellPadding} text-callout text-[var(--text-primary)]
+                      ${cellPadding} typo-callout text-[var(--text-primary)]
                       ${col.align === 'right' ? 'text-right' : col.align === 'center' ? 'text-center' : ''}
                     `}
                   >

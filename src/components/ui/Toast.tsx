@@ -84,11 +84,11 @@ export function ToastContainer() {
                 {icons[t.type]}
               </span>
               <div className="flex-1 min-w-0">
-                <p className="text-callout font-medium text-[var(--text-primary)]">
+                <p className="typo-callout font-medium text-[var(--text-primary)]">
                   {t.title}
                 </p>
                 {t.message && (
-                  <p className="text-caption text-[var(--text-secondary)] mt-0.5">
+                  <p className="typo-caption text-[var(--text-secondary)] mt-0.5">
                     {t.message}
                   </p>
                 )}

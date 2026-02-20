@@ -17,7 +17,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
         {label && (
           <label
             htmlFor={inputId}
-            className="text-subheadline font-medium text-[var(--text-secondary)]"
+            className="typo-subhead font-medium text-[var(--text-secondary)]"
           >
             {label}
           </label>
@@ -35,7 +35,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
             ref={ref}
             id={inputId}
             className={`
-              w-full h-9 px-3 text-callout
+              w-full h-9 px-3 typo-callout
               bg-[var(--input-bg)] text-[var(--text-primary)]
               border border-[var(--input-border)] rounded-lg
               placeholder:text-[var(--text-quaternary)]
@@ -61,12 +61,12 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
           )}
         </div>
         {error && (
-          <p id={`${inputId}-error`} className="text-caption text-system-red" role="alert">
+          <p id={`${inputId}-error`} className="typo-caption text-system-red" role="alert">
             {error}
           </p>
         )}
         {hint && !error && (
-          <p id={`${inputId}-hint`} className="text-caption text-[var(--text-tertiary)]">
+          <p id={`${inputId}-hint`} className="typo-caption text-[var(--text-tertiary)]">
             {hint}
           </p>
         )}

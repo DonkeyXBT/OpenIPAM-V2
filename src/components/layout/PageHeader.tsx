@@ -17,9 +17,9 @@ export function PageHeader({
   return (
     <div className={`flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 ${className}`}>
       <div>
-        <h1 className="text-title-2 text-[var(--text-primary)]">{title}</h1>
+        <h1 className="typo-title-2 text-[var(--text-primary)]">{title}</h1>
         {description && (
-          <p className="text-callout text-[var(--text-secondary)] mt-0.5">{description}</p>
+          <p className="typo-callout text-[var(--text-secondary)] mt-0.5">{description}</p>
         )}
       </div>
       {actions && <div className="flex items-center gap-2 shrink-0">{actions}</div>}

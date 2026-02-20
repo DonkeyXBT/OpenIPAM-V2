@@ -71,7 +71,7 @@ export function Hosts() {
       label: 'Name',
       sortable: true,
       render: (val: unknown) => (
-        <span className="text-mono font-medium text-[var(--text-primary)]">{String(val)}</span>
+        <span className="typo-mono font-medium text-[var(--text-primary)]">{String(val)}</span>
       ),
     },
     {
@@ -123,7 +123,7 @@ export function Hosts() {
       key: 'location',
       label: 'Location',
       sortable: true,
-      render: (val: unknown) => <span className="text-caption text-[var(--text-tertiary)]">{String(val) || '—'}</span>,
+      render: (val: unknown) => <span className="typo-caption text-[var(--text-tertiary)]">{String(val) || '—'}</span>,
     },
   ]
 
@@ -167,7 +167,7 @@ export function Hosts() {
         }
       />
 
-      <span className="text-caption text-[var(--text-tertiary)]">
+      <span className="typo-caption text-[var(--text-tertiary)]">
         Showing {filtered.length} of {hosts.length} hosts
       </span>
 

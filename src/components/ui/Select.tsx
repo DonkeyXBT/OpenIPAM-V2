@@ -23,7 +23,7 @@ export const Select = forwardRef<HTMLSelectElement, SelectProps>(
         {label && (
           <label
             htmlFor={selectId}
-            className="text-subheadline font-medium text-[var(--text-secondary)]"
+            className="typo-subhead font-medium text-[var(--text-secondary)]"
           >
             {label}
           </label>
@@ -33,7 +33,7 @@ export const Select = forwardRef<HTMLSelectElement, SelectProps>(
             ref={ref}
             id={selectId}
             className={`
-              w-full h-9 px-3 pr-8 text-callout appearance-none
+              w-full h-9 px-3 pr-8 typo-callout appearance-none
               bg-[var(--input-bg)] text-[var(--text-primary)]
               border border-[var(--input-border)] rounded-lg
               transition-all duration-150 cursor-pointer
@@ -62,7 +62,7 @@ export const Select = forwardRef<HTMLSelectElement, SelectProps>(
           />
         </div>
         {error && (
-          <p className="text-caption text-system-red" role="alert">
+          <p className="typo-caption text-system-red" role="alert">
             {error}
           </p>
         )}

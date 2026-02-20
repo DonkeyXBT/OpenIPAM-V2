@@ -61,7 +61,7 @@ export function CardTitle({
   className?: string
 }) {
   return (
-    <h3 className={`text-headline text-[var(--text-primary)] ${className}`}>
+    <h3 className={`typo-headline text-[var(--text-primary)] ${className}`}>
       {children}
     </h3>
   )

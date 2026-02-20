@@ -66,12 +66,12 @@ export function ProgressRing({
         />
       </svg>
       {showValue && (
-        <span className="text-footnote font-medium text-[var(--text-secondary)]">
+        <span className="typo-footnote font-medium text-[var(--text-secondary)]">
           {Math.round(percent * 100)}%
         </span>
       )}
       {label && (
-        <span className="text-caption text-[var(--text-tertiary)]">{label}</span>
+        <span className="typo-caption text-[var(--text-tertiary)]">{label}</span>
       )}
     </div>
   )
@@ -123,15 +123,15 @@ export function CapacityBar({
       </div>
       {showLabels && (
         <div className="flex items-center gap-3 mt-1.5">
-          <span className="inline-flex items-center gap-1 text-caption text-[var(--text-tertiary)]">
+          <span className="inline-flex items-center gap-1 typo-caption text-[var(--text-tertiary)]">
             <span className="w-2 h-2 rounded-full bg-system-blue" aria-hidden="true" />
             {used} assigned
           </span>
-          <span className="inline-flex items-center gap-1 text-caption text-[var(--text-tertiary)]">
+          <span className="inline-flex items-center gap-1 typo-caption text-[var(--text-tertiary)]">
             <span className="w-2 h-2 rounded-full bg-system-orange" aria-hidden="true" />
             {reserved} reserved
           </span>
-          <span className="inline-flex items-center gap-1 text-caption text-[var(--text-tertiary)]">
+          <span className="inline-flex items-center gap-1 typo-caption text-[var(--text-tertiary)]">
             <span className="w-2 h-2 rounded-full bg-[var(--surface-tertiary)]" aria-hidden="true" />
             {total - used - reserved} free
           </span>

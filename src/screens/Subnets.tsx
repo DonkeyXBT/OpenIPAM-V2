@@ -35,7 +35,7 @@ export function Subnets() {
       sortable: true,
       render: (_v: unknown, row: unknown) => {
         const s = row as unknown as Subnet
-        return <span className="text-mono font-medium text-[var(--text-primary)]">{s.network}/{s.cidr}</span>
+        return <span className="typo-mono font-medium text-[var(--text-primary)]">{s.network}/{s.cidr}</span>
       },
     },
     { key: 'name', label: 'Name', sortable: true },
@@ -56,7 +56,7 @@ export function Subnets() {
         return v ? <Badge variant="info" size="sm">VLAN {v.vlanId}</Badge> : '—'
       },
     },
-    { key: 'gateway', label: 'Gateway', render: (v: unknown) => <span className="text-mono text-[var(--text-tertiary)]">{String(v)}</span> },
+    { key: 'gateway', label: 'Gateway', render: (v: unknown) => <span className="typo-mono text-[var(--text-tertiary)]">{String(v)}</span> },
     {
       key: 'totalHosts',
       label: 'Capacity',
@@ -76,7 +76,7 @@ export function Subnets() {
         const s = row as unknown as Subnet
         const pct = Math.round((s.assignedCount / s.totalHosts) * 100)
         return (
-          <span className={`text-callout font-medium ${pct > 90 ? 'text-system-red' : pct > 75 ? 'text-system-orange' : 'text-[var(--text-secondary)]'}`}>
+          <span className={`typo-callout font-medium ${pct > 90 ? 'text-system-red' : pct > 75 ? 'text-system-orange' : 'text-[var(--text-secondary)]'}`}>
             {pct}%
           </span>
         )

@@ -82,8 +82,8 @@ export function Settings() {
           {/* Theme */}
           <div className="flex items-center justify-between">
             <div>
-              <p className="text-callout font-medium text-[var(--text-primary)]">Theme</p>
-              <p className="text-caption text-[var(--text-tertiary)]">Choose your preferred color scheme</p>
+              <p className="typo-callout font-medium text-[var(--text-primary)]">Theme</p>
+              <p className="typo-caption text-[var(--text-tertiary)]">Choose your preferred color scheme</p>
             </div>
             <div className="flex items-center gap-1 bg-[var(--surface-tertiary)] rounded-lg p-0.5">
               {(['light', 'dark', 'system'] as Theme[]).map((t) => (
@@ -110,8 +110,8 @@ export function Settings() {
           {/* Compact Mode */}
           <div className="flex items-center justify-between">
             <div>
-              <p className="text-callout font-medium text-[var(--text-primary)]">Compact Mode</p>
-              <p className="text-caption text-[var(--text-tertiary)]">Reduce spacing in tables and lists</p>
+              <p className="typo-callout font-medium text-[var(--text-primary)]">Compact Mode</p>
+              <p className="typo-caption text-[var(--text-tertiary)]">Reduce spacing in tables and lists</p>
             </div>
             <button
               onClick={() => setCompactMode(!compactMode)}
@@ -135,8 +135,8 @@ export function Settings() {
           {/* Font Size */}
           <div className="flex items-center justify-between">
             <div>
-              <p className="text-callout font-medium text-[var(--text-primary)]">Content Density</p>
-              <p className="text-caption text-[var(--text-tertiary)]">Adjust information density</p>
+              <p className="typo-callout font-medium text-[var(--text-primary)]">Content Density</p>
+              <p className="typo-caption text-[var(--text-tertiary)]">Adjust information density</p>
             </div>
             <Select
               options={[
@@ -162,8 +162,8 @@ export function Settings() {
         <div className="space-y-4">
           <div className="flex items-center justify-between">
             <div>
-              <p className="text-callout font-medium text-[var(--text-primary)]">Export Database</p>
-              <p className="text-caption text-[var(--text-tertiary)]">Download all data as a JSON backup file</p>
+              <p className="typo-callout font-medium text-[var(--text-primary)]">Export Database</p>
+              <p className="typo-caption text-[var(--text-tertiary)]">Download all data as a JSON backup file</p>
             </div>
             <Button variant="secondary" size="sm" icon={<Download className="w-4 h-4" />} onClick={handleExport}>
               Export
@@ -174,8 +174,8 @@ export function Settings() {
 
           <div className="flex items-center justify-between">
             <div>
-              <p className="text-callout font-medium text-[var(--text-primary)]">Import Database</p>
-              <p className="text-caption text-[var(--text-tertiary)]">Restore from a JSON backup file</p>
+              <p className="typo-callout font-medium text-[var(--text-primary)]">Import Database</p>
+              <p className="typo-caption text-[var(--text-tertiary)]">Restore from a JSON backup file</p>
             </div>
             <Button variant="secondary" size="sm" icon={<Upload className="w-4 h-4" />} onClick={handleImport}>
               Import
@@ -186,8 +186,8 @@ export function Settings() {
 
           <div className="flex items-center justify-between">
             <div>
-              <p className="text-callout font-medium text-[var(--text-primary)]">Clear All Data</p>
-              <p className="text-caption text-system-red/80">Permanently delete all records. This cannot be undone.</p>
+              <p className="typo-callout font-medium text-[var(--text-primary)]">Clear All Data</p>
+              <p className="typo-caption text-system-red/80">Permanently delete all records. This cannot be undone.</p>
             </div>
             <Button
               variant="destructive"
@@ -223,7 +223,7 @@ export function Settings() {
 
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-2">
-              <span className="text-callout text-[var(--text-secondary)]">Status:</span>
+              <span className="typo-callout text-[var(--text-secondary)]">Status:</span>
               {serverStatus === 'online' && (
                 <Badge variant="success" dot>Online</Badge>
               )}
@@ -261,10 +261,10 @@ export function Settings() {
 
         <div className="space-y-3">
           <div className="flex items-center justify-between">
-            <span className="text-callout text-[var(--text-secondary)]">SAML SSO</span>
+            <span className="typo-callout text-[var(--text-secondary)]">SAML SSO</span>
             <Badge variant="default">Not Configured</Badge>
           </div>
-          <p className="text-caption text-[var(--text-tertiary)]">
+          <p className="typo-caption text-[var(--text-tertiary)]">
             SAML SSO with Microsoft Entra ID requires the Flask backend. Configure via environment variables or saml/settings.json.
           </p>
         </div>
@@ -281,16 +281,16 @@ export function Settings() {
 
         <div className="space-y-2">
           <div className="flex items-center justify-between">
-            <span className="text-callout text-[var(--text-secondary)]">Version</span>
-            <span className="text-callout text-[var(--text-primary)] font-mono">2.0.0</span>
+            <span className="typo-callout text-[var(--text-secondary)]">Version</span>
+            <span className="typo-callout text-[var(--text-primary)] font-mono">2.0.0</span>
           </div>
           <div className="flex items-center justify-between">
-            <span className="text-callout text-[var(--text-secondary)]">Mode</span>
+            <span className="typo-callout text-[var(--text-secondary)]">Mode</span>
             <Badge variant="info">Browser Only</Badge>
           </div>
           <div className="flex items-center justify-between">
-            <span className="text-callout text-[var(--text-secondary)]">Database</span>
-            <span className="text-callout text-[var(--text-primary)]">SQLite (IndexedDB)</span>
+            <span className="typo-callout text-[var(--text-secondary)]">Database</span>
+            <span className="typo-callout text-[var(--text-primary)]">SQLite (IndexedDB)</span>
           </div>
         </div>
       </Card>

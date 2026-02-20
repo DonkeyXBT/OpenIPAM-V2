@@ -12,6 +12,7 @@ import { Locations } from '@/screens/Locations'
 import { Templates } from '@/screens/Templates'
 import { AuditLog } from '@/screens/AuditLog'
 import { Settings } from '@/screens/Settings'
+import { Organizations } from '@/screens/Organizations'
 import { DetailView } from '@/screens/DetailView'
 import { ErrorState } from '@/components/ui/EmptyState'
 
@@ -55,6 +56,7 @@ export default function App() {
           <Route path="vlans" element={<VLANs />} />
           <Route path="vlans/:id" element={<DetailView type="vlan" />} />
           <Route path="dhcp" element={<DHCP />} />
+          <Route path="organizations" element={<Organizations />} />
           <Route path="locations" element={<Locations />} />
           <Route path="templates" element={<Templates />} />
           <Route path="audit" element={<AuditLog />} />

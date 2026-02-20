@@ -114,8 +114,8 @@ export function Dashboard() {
             <Card hover className="relative overflow-hidden">
               <div className="flex items-start justify-between">
                 <div>
-                  <p className="text-subheadline text-[var(--text-secondary)]">{stat.label}</p>
-                  <p className="text-title-1 text-[var(--text-primary)] mt-1">{stat.value}</p>
+                  <p className="typo-subhead text-[var(--text-secondary)]">{stat.label}</p>
+                  <p className="typo-title-1 text-[var(--text-primary)] mt-1">{stat.value}</p>
                 </div>
                 <div
                   className="w-10 h-10 rounded-xl flex items-center justify-center"
@@ -132,13 +132,13 @@ export function Dashboard() {
                     <TrendingDown className="w-3 h-3 text-system-red" />
                   ) : null}
                   <span
-                    className={`text-caption font-medium ${
+                    className={`typo-caption font-medium ${
                       stat.change > 0 ? 'text-system-green' : stat.change < 0 ? 'text-system-red' : 'text-[var(--text-tertiary)]'
                     }`}
                   >
                     {stat.change > 0 ? '+' : ''}{stat.change}%
                   </span>
-                  <span className="text-caption text-[var(--text-quaternary)]">{stat.changeLabel}</span>
+                  <span className="typo-caption text-[var(--text-quaternary)]">{stat.changeLabel}</span>
                 </div>
               )}
             </Card>
@@ -157,8 +157,8 @@ export function Dashboard() {
               {iconMap[stat.icon]}
             </div>
             <div>
-              <p className="text-footnote text-[var(--text-tertiary)]">{stat.label}</p>
-              <p className="text-headline text-[var(--text-primary)]">{stat.value}</p>
+              <p className="typo-footnote text-[var(--text-tertiary)]">{stat.label}</p>
+              <p className="typo-headline text-[var(--text-primary)]">{stat.value}</p>
             </div>
           </Card>
         ))}
@@ -204,8 +204,8 @@ export function Dashboard() {
               </ResponsiveContainer>
               {/* Center Label */}
               <div className="absolute inset-0 flex flex-col items-center justify-center pointer-events-none">
-                <span className="text-title-2 text-[var(--text-primary)]">6,132</span>
-                <span className="text-caption text-[var(--text-tertiary)]">Total IPs</span>
+                <span className="typo-title-2 text-[var(--text-primary)]">6,132</span>
+                <span className="typo-caption text-[var(--text-tertiary)]">Total IPs</span>
               </div>
             </div>
           </div>
@@ -215,8 +215,8 @@ export function Dashboard() {
             {donutData.map((d) => (
               <div key={d.name} className="flex items-center gap-1.5">
                 <span className="w-2.5 h-2.5 rounded-full" style={{ backgroundColor: d.color }} />
-                <span className="text-caption text-[var(--text-secondary)]">{d.name}</span>
-                <span className="text-caption font-semibold text-[var(--text-primary)]">{d.value.toLocaleString()}</span>
+                <span className="typo-caption text-[var(--text-secondary)]">{d.name}</span>
+                <span className="typo-caption font-semibold text-[var(--text-primary)]">{d.value.toLocaleString()}</span>
               </div>
             ))}
           </div>
@@ -238,8 +238,8 @@ export function Dashboard() {
               <div className="w-12 h-12 rounded-full bg-system-green/15 flex items-center justify-center mb-3">
                 <Activity className="w-6 h-6 text-system-green" />
               </div>
-              <p className="text-callout font-medium text-[var(--text-primary)]">All Clear</p>
-              <p className="text-caption text-[var(--text-tertiary)]">No IP conflicts detected</p>
+              <p className="typo-callout font-medium text-[var(--text-primary)]">All Clear</p>
+              <p className="typo-caption text-[var(--text-tertiary)]">No IP conflicts detected</p>
             </div>
           ) : (
             <div className="px-4 pb-4 space-y-2">
@@ -260,10 +260,10 @@ export function Dashboard() {
                       'text-system-blue'
                     }`} />
                     <div className="flex-1 min-w-0">
-                      <p className="text-callout font-medium text-[var(--text-primary)] truncate">
+                      <p className="typo-callout font-medium text-[var(--text-primary)] truncate">
                         {alert.message}
                       </p>
-                      <p className="text-caption text-[var(--text-tertiary)] mt-0.5">
+                      <p className="typo-caption text-[var(--text-tertiary)] mt-0.5">
                         {new Date(alert.timestamp).toLocaleString()}
                       </p>
                     </div>
@@ -293,17 +293,17 @@ export function Dashboard() {
                 <div key={subnet.id}>
                   <div className="flex items-center justify-between mb-1.5">
                     <div className="flex items-center gap-2">
-                      <span className="text-callout font-medium text-[var(--text-primary)]">
+                      <span className="typo-callout font-medium text-[var(--text-primary)]">
                         {subnet.network}/{subnet.cidr}
                       </span>
-                      <span className="text-caption text-[var(--text-tertiary)]">{subnet.name}</span>
+                      <span className="typo-caption text-[var(--text-tertiary)]">{subnet.name}</span>
                       {company && (
                         <Badge variant="custom" size="sm" color={company.color} dot>
                           {company.code}
                         </Badge>
                       )}
                     </div>
-                    <span className="text-caption font-medium text-[var(--text-secondary)]">
+                    <span className="typo-caption font-medium text-[var(--text-secondary)]">
                       {Math.round((subnet.assignedCount / subnet.totalHosts) * 100)}%
                     </span>
                   </div>
@@ -334,7 +334,7 @@ export function Dashboard() {
           {recentActivity.length === 0 ? (
             <div className="flex flex-col items-center justify-center py-10 text-center">
               <Clock className="w-8 h-8 text-[var(--text-quaternary)] mb-2" />
-              <p className="text-callout text-[var(--text-tertiary)]">No recent activity</p>
+              <p className="typo-callout text-[var(--text-tertiary)]">No recent activity</p>
             </div>
           ) : (
             <div className="px-4 pb-4">
@@ -354,17 +354,17 @@ export function Dashboard() {
                       </span>
                     </div>
                     <div className="flex-1 min-w-0">
-                      <p className="text-callout text-[var(--text-primary)] truncate">
+                      <p className="typo-callout text-[var(--text-primary)] truncate">
                         <span className="font-medium">{entry.userName}</span>{' '}
                         <span className={`inline-flex px-1.5 py-0 text-[10px] font-medium rounded-full ${actionConfig.color}`}>
                           {actionConfig.label}
                         </span>{' '}
                         <span className="text-[var(--text-secondary)]">{entry.entityType}</span>
                       </p>
-                      <p className="text-caption text-[var(--text-tertiary)] truncate mt-0.5">
+                      <p className="typo-caption text-[var(--text-tertiary)] truncate mt-0.5">
                         {entry.details}
                       </p>
-                      <p className="text-caption text-[var(--text-quaternary)] mt-0.5">
+                      <p className="typo-caption text-[var(--text-quaternary)] mt-0.5">
                         {new Date(entry.timestamp).toLocaleString()}
                       </p>
                     </div>

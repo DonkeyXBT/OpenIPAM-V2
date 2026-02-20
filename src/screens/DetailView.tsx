@@ -49,8 +49,8 @@ import { hosts, subnets, vlans, ipAddresses, companies, auditLog } from '@/data/
 function AttributeRow({ label, value, mono }: { label: string; value: React.ReactNode; mono?: boolean }) {
   return (
     <div className="flex items-start py-2.5 border-b border-[var(--border-secondary)] last:border-b-0">
-      <dt className="w-40 shrink-0 text-subheadline text-[var(--text-tertiary)]">{label}</dt>
-      <dd className={`flex-1 text-callout text-[var(--text-primary)] ${mono ? 'text-mono' : ''}`}>
+      <dt className="w-40 shrink-0 typo-subhead text-[var(--text-tertiary)]">{label}</dt>
+      <dd className={`flex-1 typo-callout text-[var(--text-primary)] ${mono ? 'typo-mono' : ''}`}>
         {value || <span className="text-[var(--text-quaternary)]">—</span>}
       </dd>
     </div>
@@ -90,10 +90,10 @@ function HostDetail({ id }: { id: string }) {
             </div>
             <div>
               <div className="flex items-center gap-2">
-                <h1 className="text-title-2 text-[var(--text-primary)]">{host.vmName}</h1>
+                <h1 className="typo-title-2 text-[var(--text-primary)]">{host.vmName}</h1>
                 <HostStateBadge state={host.state} />
               </div>
-              <p className="text-callout text-[var(--text-secondary)]">{host.description}</p>
+              <p className="typo-callout text-[var(--text-secondary)]">{host.description}</p>
             </div>
           </div>
         </div>
@@ -142,12 +142,12 @@ function HostDetail({ id }: { id: string }) {
             <CardHeader><CardTitle>Resources</CardTitle></CardHeader>
             <div className="grid sm:grid-cols-3 gap-4">
               <div>
-                <p className="text-subheadline text-[var(--text-tertiary)] mb-1">CPU</p>
-                <p className="text-title-3 text-[var(--text-primary)]">{host.cpuCount} <span className="text-callout text-[var(--text-tertiary)]">cores</span></p>
+                <p className="typo-subhead text-[var(--text-tertiary)] mb-1">CPU</p>
+                <p className="typo-title-3 text-[var(--text-primary)]">{host.cpuCount} <span className="typo-callout text-[var(--text-tertiary)]">cores</span></p>
               </div>
               <div>
-                <p className="text-subheadline text-[var(--text-tertiary)] mb-1">Memory</p>
-                <p className="text-headline text-[var(--text-primary)]">{host.memoryUsedGB} / {host.memoryTotalGB} GB</p>
+                <p className="typo-subhead text-[var(--text-tertiary)] mb-1">Memory</p>
+                <p className="typo-headline text-[var(--text-primary)]">{host.memoryUsedGB} / {host.memoryTotalGB} GB</p>
                 <div className="mt-1 h-1.5 rounded-full bg-[var(--surface-tertiary)] overflow-hidden">
                   <div
                     className={`h-full rounded-full transition-all ${memPercent > 90 ? 'bg-system-red' : memPercent > 75 ? 'bg-system-orange' : 'bg-system-blue'}`}
@@ -156,8 +156,8 @@ function HostDetail({ id }: { id: string }) {
                 </div>
               </div>
               <div>
-                <p className="text-subheadline text-[var(--text-tertiary)] mb-1">Disk</p>
-                <p className="text-headline text-[var(--text-primary)]">{host.diskUsedGB} / {host.diskSizeGB} GB</p>
+                <p className="typo-subhead text-[var(--text-tertiary)] mb-1">Disk</p>
+                <p className="typo-headline text-[var(--text-primary)]">{host.diskUsedGB} / {host.diskSizeGB} GB</p>
                 <div className="mt-1 h-1.5 rounded-full bg-[var(--surface-tertiary)] overflow-hidden">
                   <div
                     className={`h-full rounded-full transition-all ${diskPercent > 90 ? 'bg-system-red' : diskPercent > 75 ? 'bg-system-orange' : 'bg-system-blue'}`}
@@ -176,16 +176,16 @@ function HostDetail({ id }: { id: string }) {
             {hostIPs.length > 0 ? (
               <Table
                 columns={[
-                  { key: 'ipAddress', label: 'Address', sortable: true, render: (v) => <span className="text-mono">{String(v)}</span> },
+                  { key: 'ipAddress', label: 'Address', sortable: true, render: (v) => <span className="typo-mono">{String(v)}</span> },
                   { key: 'status', label: 'Status', render: (v) => <IPStatusBadge status={v as any} /> },
                   { key: 'dnsName', label: 'DNS', render: (v) => String(v) || '—' },
-                  { key: 'macAddress', label: 'MAC', render: (v) => <span className="text-mono text-[var(--text-tertiary)]">{String(v) || '—'}</span> },
+                  { key: 'macAddress', label: 'MAC', render: (v) => <span className="typo-mono text-[var(--text-tertiary)]">{String(v) || '—'}</span> },
                 ]}
                 data={hostIPs as unknown as Record<string, unknown>[]}
                 compact
               />
             ) : (
-              <div className="pb-6 text-center text-callout text-[var(--text-tertiary)]">No IP addresses assigned</div>
+              <div className="pb-6 text-center typo-callout text-[var(--text-tertiary)]">No IP addresses assigned</div>
             )}
           </Card>
         </div>
@@ -197,12 +197,12 @@ function HostDetail({ id }: { id: string }) {
             <CardHeader><CardTitle>Lifecycle</CardTitle></CardHeader>
             <dl className="space-y-3">
               <div>
-                <dt className="text-caption text-[var(--text-tertiary)]">Purchase Date</dt>
-                <dd className="text-callout text-[var(--text-primary)]">{host.purchaseDate || '—'}</dd>
+                <dt className="typo-caption text-[var(--text-tertiary)]">Purchase Date</dt>
+                <dd className="typo-callout text-[var(--text-primary)]">{host.purchaseDate || '—'}</dd>
               </div>
               <div>
-                <dt className="text-caption text-[var(--text-tertiary)]">Warranty Expiry</dt>
-                <dd className="text-callout text-[var(--text-primary)]">
+                <dt className="typo-caption text-[var(--text-tertiary)]">Warranty Expiry</dt>
+                <dd className="typo-callout text-[var(--text-primary)]">
                   {host.warrantyExpiry || '—'}
                   {host.warrantyExpiry && new Date(host.warrantyExpiry) < new Date() && (
                     <Badge variant="error" size="sm" className="ml-2">Expired</Badge>
@@ -210,11 +210,11 @@ function HostDetail({ id }: { id: string }) {
                 </dd>
               </div>
               <div>
-                <dt className="text-caption text-[var(--text-tertiary)]">End of Life</dt>
-                <dd className="text-callout text-[var(--text-primary)]">{host.eolDate || '—'}</dd>
+                <dt className="typo-caption text-[var(--text-tertiary)]">End of Life</dt>
+                <dd className="typo-callout text-[var(--text-primary)]">{host.eolDate || '—'}</dd>
               </div>
               <div>
-                <dt className="text-caption text-[var(--text-tertiary)]">Status</dt>
+                <dt className="typo-caption text-[var(--text-tertiary)]">Status</dt>
                 <dd>
                   <Badge variant={host.lifecycleStatus === 'active' ? 'success' : 'error'}>
                     {host.lifecycleStatus}
@@ -231,15 +231,15 @@ function HostDetail({ id }: { id: string }) {
               <div className="flex items-center gap-2">
                 <Clock className="w-3.5 h-3.5 text-[var(--text-quaternary)]" />
                 <div>
-                  <dt className="text-caption text-[var(--text-tertiary)]">Created</dt>
-                  <dd className="text-callout">{new Date(host.createdAt).toLocaleString()}</dd>
+                  <dt className="typo-caption text-[var(--text-tertiary)]">Created</dt>
+                  <dd className="typo-callout">{new Date(host.createdAt).toLocaleString()}</dd>
                 </div>
               </div>
               <div className="flex items-center gap-2">
                 <Clock className="w-3.5 h-3.5 text-[var(--text-quaternary)]" />
                 <div>
-                  <dt className="text-caption text-[var(--text-tertiary)]">Updated</dt>
-                  <dd className="text-callout">{new Date(host.updatedAt).toLocaleString()}</dd>
+                  <dt className="typo-caption text-[var(--text-tertiary)]">Updated</dt>
+                  <dd className="typo-callout">{new Date(host.updatedAt).toLocaleString()}</dd>
                 </div>
               </div>
             </dl>
@@ -258,8 +258,8 @@ function HostDetail({ id }: { id: string }) {
                       </span>
                     </div>
                     <div>
-                      <p className="text-caption text-[var(--text-primary)]">{entry.details}</p>
-                      <p className="text-caption text-[var(--text-quaternary)]">
+                      <p className="typo-caption text-[var(--text-primary)]">{entry.details}</p>
+                      <p className="typo-caption text-[var(--text-quaternary)]">
                         {entry.userName} · {new Date(entry.timestamp).toLocaleDateString()}
                       </p>
                     </div>
@@ -267,7 +267,7 @@ function HostDetail({ id }: { id: string }) {
                 ))}
               </div>
             ) : (
-              <p className="text-caption text-[var(--text-tertiary)]">No recent changes</p>
+              <p className="typo-caption text-[var(--text-tertiary)]">No recent changes</p>
             )}
           </Card>
         </div>
@@ -297,8 +297,8 @@ function SubnetDetail({ id }: { id: string }) {
           <Network className="w-5 h-5 text-system-indigo" />
         </div>
         <div>
-          <h1 className="text-title-2 text-[var(--text-primary)]">{subnet.network}/{subnet.cidr}</h1>
-          <p className="text-callout text-[var(--text-secondary)]">{subnet.name} — {subnet.description}</p>
+          <h1 className="typo-title-2 text-[var(--text-primary)]">{subnet.network}/{subnet.cidr}</h1>
+          <p className="typo-callout text-[var(--text-secondary)]">{subnet.name} — {subnet.description}</p>
         </div>
       </div>
 
@@ -307,8 +307,8 @@ function SubnetDetail({ id }: { id: string }) {
           <Card padding="lg">
             <CardHeader><CardTitle>Subnet Information</CardTitle></CardHeader>
             <dl>
-              <AttributeRow label="Network" value={<span className="text-mono">{subnet.network}/{subnet.cidr}</span>} />
-              <AttributeRow label="Gateway" value={<span className="text-mono">{subnet.gateway}</span>} />
+              <AttributeRow label="Network" value={<span className="typo-mono">{subnet.network}/{subnet.cidr}</span>} />
+              <AttributeRow label="Gateway" value={<span className="typo-mono">{subnet.gateway}</span>} />
               <AttributeRow label="DNS Servers" value={subnet.dnsServers} mono />
               <AttributeRow label="VLAN" value={vlan ? <Badge variant="info">VLAN {vlan.vlanId} — {vlan.name}</Badge> : '—'} />
               <AttributeRow label="Company" value={company ? <Badge variant="custom" color={company.color} dot>{company.name}</Badge> : '—'} />
@@ -319,16 +319,16 @@ function SubnetDetail({ id }: { id: string }) {
             <CardHeader><CardTitle>Capacity</CardTitle></CardHeader>
             <div className="grid grid-cols-3 gap-4 mb-4">
               <div className="text-center p-3 rounded-lg bg-system-blue/5">
-                <p className="text-title-3 text-system-blue">{subnet.assignedCount}</p>
-                <p className="text-caption text-[var(--text-tertiary)]">Assigned</p>
+                <p className="typo-title-3 text-system-blue">{subnet.assignedCount}</p>
+                <p className="typo-caption text-[var(--text-tertiary)]">Assigned</p>
               </div>
               <div className="text-center p-3 rounded-lg bg-system-orange/5">
-                <p className="text-title-3 text-system-orange">{subnet.reservedCount}</p>
-                <p className="text-caption text-[var(--text-tertiary)]">Reserved</p>
+                <p className="typo-title-3 text-system-orange">{subnet.reservedCount}</p>
+                <p className="typo-caption text-[var(--text-tertiary)]">Reserved</p>
               </div>
               <div className="text-center p-3 rounded-lg bg-system-green/5">
-                <p className="text-title-3 text-system-green">{subnet.availableCount}</p>
-                <p className="text-caption text-[var(--text-tertiary)]">Available</p>
+                <p className="typo-title-3 text-system-green">{subnet.availableCount}</p>
+                <p className="typo-caption text-[var(--text-tertiary)]">Available</p>
               </div>
             </div>
             <CapacityBar
@@ -344,10 +344,10 @@ function SubnetDetail({ id }: { id: string }) {
             </div>
             <Table
               columns={[
-                { key: 'ipAddress', label: 'Address', sortable: true, render: (v) => <span className="text-mono">{String(v)}</span> },
+                { key: 'ipAddress', label: 'Address', sortable: true, render: (v) => <span className="typo-mono">{String(v)}</span> },
                 { key: 'status', label: 'Status', render: (v) => <IPStatusBadge status={v as any} /> },
                 { key: 'dnsName', label: 'DNS', render: (v) => String(v) || '—' },
-                { key: 'macAddress', label: 'MAC', render: (v) => <span className="text-mono text-[var(--text-tertiary)]">{String(v) || '—'}</span> },
+                { key: 'macAddress', label: 'MAC', render: (v) => <span className="typo-mono text-[var(--text-tertiary)]">{String(v) || '—'}</span> },
               ]}
               data={subnetIPs as unknown as Record<string, unknown>[]}
               compact
@@ -361,14 +361,14 @@ function SubnetDetail({ id }: { id: string }) {
             <CardHeader><CardTitle>Quick Stats</CardTitle></CardHeader>
             <div className="space-y-3">
               <div>
-                <p className="text-caption text-[var(--text-tertiary)]">Utilization</p>
-                <p className="text-title-3 text-[var(--text-primary)]">
+                <p className="typo-caption text-[var(--text-tertiary)]">Utilization</p>
+                <p className="typo-title-3 text-[var(--text-primary)]">
                   {Math.round(((subnet.assignedCount + subnet.reservedCount) / subnet.totalHosts) * 100)}%
                 </p>
               </div>
               <div>
-                <p className="text-caption text-[var(--text-tertiary)]">Total Addresses</p>
-                <p className="text-headline text-[var(--text-primary)]">{subnet.totalHosts}</p>
+                <p className="typo-caption text-[var(--text-tertiary)]">Total Addresses</p>
+                <p className="typo-headline text-[var(--text-primary)]">{subnet.totalHosts}</p>
               </div>
             </div>
           </Card>
@@ -407,7 +407,7 @@ export function DetailView({ type }: { type: 'host' | 'ip' | 'subnet' | 'vlan' }
       {/* Back navigation */}
       <button
         onClick={() => navigate(paths[type])}
-        className="inline-flex items-center gap-1.5 text-callout text-system-blue hover:underline mb-4"
+        className="inline-flex items-center gap-1.5 typo-callout text-system-blue hover:underline mb-4"
       >
         <ArrowLeft className="w-4 h-4" />
         Back to {labels[type]}

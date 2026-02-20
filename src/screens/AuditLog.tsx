@@ -56,7 +56,7 @@ export function AuditLog() {
       sortable: true,
       width: '180px',
       render: (v: unknown) => (
-        <span className="text-caption text-[var(--text-secondary)]">
+        <span className="typo-caption text-[var(--text-secondary)]">
           {new Date(String(v)).toLocaleString()}
         </span>
       ),
@@ -71,7 +71,7 @@ export function AuditLog() {
           <div className="w-6 h-6 rounded-full bg-[var(--surface-tertiary)] flex items-center justify-center">
             <span className="text-[10px] font-bold text-[var(--text-secondary)]">{String(v).charAt(0)}</span>
           </div>
-          <span className="text-callout font-medium">{String(v)}</span>
+          <span className="typo-callout font-medium">{String(v)}</span>
         </div>
       ),
     },
@@ -127,7 +127,7 @@ export function AuditLog() {
         emptyState={<EmptyState icon={<ClipboardList />} title="No audit entries" description="Activity will appear here as changes are made." />}
       />
 
-      <span className="text-caption text-[var(--text-tertiary)]">
+      <span className="typo-caption text-[var(--text-tertiary)]">
         Showing {filtered.length} of {auditLog.length} entries
       </span>
     </div>

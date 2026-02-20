@@ -46,7 +46,7 @@ export function VLANs() {
       label: 'VLAN ID',
       sortable: true,
       width: '100px',
-      render: (val: unknown) => <span className="text-mono font-semibold text-[var(--text-primary)]">{String(val)}</span>,
+      render: (val: unknown) => <span className="typo-mono font-semibold text-[var(--text-primary)]">{String(val)}</span>,
     },
     { key: 'name', label: 'Name', sortable: true },
     {
@@ -75,7 +75,7 @@ export function VLANs() {
       align: 'right' as const,
       render: (val: unknown) => {
         const count = subnets.filter((s) => s.vlanId === String(val)).length
-        return <span className="text-callout text-[var(--text-secondary)]">{count}</span>
+        return <span className="typo-callout text-[var(--text-secondary)]">{count}</span>
       },
     },
   ]

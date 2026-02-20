@@ -38,7 +38,7 @@ export function DHCP() {
       label: 'Range',
       render: (_v: unknown, row: unknown) => {
         const s = row as any
-        return <span className="text-mono text-[var(--text-secondary)]">{s.startIP} — {s.endIP}</span>
+        return <span className="typo-mono text-[var(--text-secondary)]">{s.startIP} — {s.endIP}</span>
       },
     },
     {
@@ -50,7 +50,7 @@ export function DHCP() {
         return (
           <div>
             <CapacityBar used={s.activeLeases} reserved={0} total={s.totalAddresses} showLabels={false} height={4} />
-            <span className="text-caption text-[var(--text-tertiary)]">{s.activeLeases}/{s.totalAddresses}</span>
+            <span className="typo-caption text-[var(--text-tertiary)]">{s.activeLeases}/{s.totalAddresses}</span>
           </div>
         )
       },
@@ -68,7 +68,7 @@ export function DHCP() {
   ]
 
   const leaseColumns = [
-    { key: 'ipAddress', label: 'IP Address', sortable: true, render: (v: unknown) => <span className="text-mono">{String(v)}</span> },
+    { key: 'ipAddress', label: 'IP Address', sortable: true, render: (v: unknown) => <span className="typo-mono">{String(v)}</span> },
     {
       key: 'status',
       label: 'Status',
@@ -80,7 +80,7 @@ export function DHCP() {
         return <Badge variant="warning" dot>Reserved</Badge>
       },
     },
-    { key: 'macAddress', label: 'MAC Address', render: (v: unknown) => <span className="text-mono text-[var(--text-tertiary)]">{String(v)}</span> },
+    { key: 'macAddress', label: 'MAC Address', render: (v: unknown) => <span className="typo-mono text-[var(--text-tertiary)]">{String(v)}</span> },
     { key: 'hostname', label: 'Hostname' },
     {
       key: 'endTime',
@@ -89,7 +89,7 @@ export function DHCP() {
         const d = new Date(String(v))
         const isExpired = d < new Date()
         return (
-          <span className={`text-caption ${isExpired ? 'text-system-red' : 'text-[var(--text-secondary)]'}`}>
+          <span className={`typo-caption ${isExpired ? 'text-system-red' : 'text-[var(--text-secondary)]'}`}>
             {d.toLocaleString()}
           </span>
         )

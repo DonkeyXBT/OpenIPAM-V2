@@ -53,15 +53,15 @@ export function Locations() {
                   </div>
                   <div className="flex-1 min-w-0">
                     <div className="flex items-center gap-2 mb-1">
-                      <h3 className="text-headline text-[var(--text-primary)] truncate">{loc.name}</h3>
+                      <h3 className="typo-headline text-[var(--text-primary)] truncate">{loc.name}</h3>
                       <Badge variant="default" size="sm">{loc.type}</Badge>
                     </div>
-                    <p className="text-caption text-[var(--text-secondary)] truncate">{loc.address}</p>
+                    <p className="typo-caption text-[var(--text-secondary)] truncate">{loc.address}</p>
                     {loc.notes && (
-                      <p className="text-caption text-[var(--text-tertiary)] mt-1">{loc.notes}</p>
+                      <p className="typo-caption text-[var(--text-tertiary)] mt-1">{loc.notes}</p>
                     )}
                     <div className="flex items-center gap-3 mt-3">
-                      <span className="text-caption text-[var(--text-tertiary)]">
+                      <span className="typo-caption text-[var(--text-tertiary)]">
                         {hostCount} host{hostCount !== 1 ? 's' : ''}
                       </span>
                     </div>
